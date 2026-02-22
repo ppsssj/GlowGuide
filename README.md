@@ -19,7 +19,13 @@
 - 어떤 순서로 해야 하는지(스텝 시퀀스)
 
 GlowGuide는 이를 **절차(Procedure)**로 구조화하고, 사용자의 얼굴 위에 **AR로 코칭**합니다.
+---
 
+## Design (Figma)
+- Figma: `화장 SNS`  
+  https://www.figma.com/design/swWvlVHguZtcmvjleDuj5u/%ED%99%94%EC%9E%A5-SNS?t=SgXCDRehHM8I9qqI-1
+
+> 주요 화면: Explore / Look Detail / AR Coaching / Completed / Creator Studio
 ---
 
 ## MVP Scope
@@ -120,14 +126,6 @@ GlowGuide는 이를 **절차(Procedure)**로 구조화하고, 사용자의 얼�
   ]
 }
 ```
-
----
-
-## Design (Figma)
-- Figma: `화장 SNS`  
-  https://www.figma.com/design/swWvlVHguZtcmvjleDuj5u/%ED%99%94%EC%9E%A5-SNS?t=SgXCDRehHM8I9qqI-1
-
-> 주요 화면: Explore / Look Detail / AR Coaching / Completed / Creator Studio
 
 ---
 
