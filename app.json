@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "GlowGuide",
+    "slug": "glowguide",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "glowguide",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "plugins": ["expo-router"]
+  }
+}

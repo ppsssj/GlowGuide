@@ -1,0 +1,93 @@
+import { Image, StyleSheet, Text, View } from "react-native";
+import { AppButton } from "../../../shared/components/AppButton";
+import { colors } from "../../../shared/constants/colors";
+import { radius } from "../../../shared/constants/radius";
+import { spacing } from "../../../shared/constants/spacing";
+import type { Creator } from "../../../shared/data/mockCreators";
+
+type CreatorHeaderProps = {
+  creator: Creator;
+};
+
+export function CreatorHeader({ creator }: CreatorHeaderProps) {
+  return (
+    <View style={styles.wrap}>
+      <View style={styles.avatarWrap}>
+        <Image source={creator.avatar} style={styles.avatar} />
+        <View style={styles.verified}><Text style={styles.verifiedText}>✓</Text></View>
+      </View>
+      <Text style={styles.name}>{creator.name}</Text>
+      <Text style={styles.meta}>{creator.title} • {creator.location}</Text>
+      <Text style={styles.bio}>{creator.bio}</Text>
+      <View style={styles.actions}>
+        <AppButton label="Follow" style={styles.action} />
+        <AppButton label="Message" variant="secondary" style={styles.action} />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  wrap: {
+    alignItems: "center",
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.xl
+  },
+  avatarWrap: {
+    position: "relative"
+  },
+  avatar: {
+    width: 126,
+    height: 126,
+    borderRadius: radius.pill,
+    borderWidth: 4,
+    borderColor: colors.surface
+  },
+  verified: {
+    position: "absolute",
+    right: 6,
+    bottom: 10,
+    width: 28,
+    height: 28,
+    borderRadius: radius.pill,
+    backgroundColor: colors.primary,
+    borderWidth: 2,
+    borderColor: colors.surface,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  verifiedText: {
+    color: colors.surface,
+    fontWeight: "900"
+  },
+  name: {
+    color: colors.ink,
+    fontSize: 30,
+    fontWeight: "900",
+    marginTop: spacing.md
+  },
+  meta: {
+    color: colors.muted,
+    fontSize: 14,
+    fontWeight: "800",
+    marginTop: spacing.xs
+  },
+  bio: {
+    color: colors.text,
+    textAlign: "center",
+    fontSize: 15,
+    lineHeight: 22,
+    marginTop: spacing.lg,
+    maxWidth: 330
+  },
+  actions: {
+    flexDirection: "row",
+    gap: spacing.md,
+    marginTop: spacing.xl
+  },
+  action: {
+    flex: 1,
+    minWidth: 142,
+    borderRadius: radius.md
+  }
+});

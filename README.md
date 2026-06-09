@@ -1,158 +1,134 @@
-# GlowGuide (화장 SNS) — AR Makeup Coaching Platform
+# GlowGuide
 
-> 인플루언서 메이크업 튜토리얼을 **재현 가능한 “룩 레시피(Recipe)”**로 변환하고, 사용자가 **AR 단계별 코칭**으로 실제로 따라 하게 만드는 SNS  
-> **뷰티 필터 앱이 아니라, 코칭(How-to) 앱**입니다.
+GlowGuide는 프리미엄 AI-native AR 메이크업 코칭 소셜 앱 MVP입니다.  
+기존 Figma Make HTML export는 참고용으로만 두고, 실제 앱은 React Native + Expo + TypeScript + Expo Router로 모바일 우선 구현했습니다.
 
----
+## Current Scope
 
-## 핵심 한 줄
-**Tutorial Video → Look Recipe(절차/좌표/동작) → AR Coach(오버레이/가이드/진행률/피드백)**
+구현된 사용자 플로우:
 
----
+- Home / Explore: 메이크업 룩 피드, 검색바, 카테고리 필터
+- Look Detail: 룩 상세, 크리에이터 정보, 난이도/시간/스텝 수, 제품 리스트, 적용 스텝
+- AR Coaching: 실제 카메라/AR 대신 mock camera UI와 React Native overlay guide 구현
+- Look Completed: before/after 비교 mock, 점수, achievement, 제품 리스트, 저장/재시도 액션
+- Creator Profile: 크리에이터 헤더, 통계, featured look, 룩 그리드
 
-## Problem
-일반적인 메이크업 튜토리얼은 “영상 시청”만으로는 재현이 어렵습니다.
+아직 구현하지 않은 범위:
 
-- 어디에 발라야 하는지(정확한 부위/범위)
-- 어떻게 움직여야 하는지(방향/스트로크/블렌딩)
-- 얼마나 해야 하는지(강도/면적/시간)
-- 어떤 순서로 해야 하는지(스텝 시퀀스)
+- Creator Editor
+- 실제 Expo Camera 연동
+- MediaPipe, face tracking, 실시간 AR 분석
+- 백엔드, 인증, 결제, 실제 커머스 연동
 
-GlowGuide는 이를 **절차(Procedure)**로 구조화하고, 사용자의 얼굴 위에 **AR로 코칭**합니다.
----
+## Design References
 
-## Design (Figma)
-- Figma: `화장 SNS`  
-  https://www.figma.com/design/swWvlVHguZtcmvjleDuj5u/%ED%99%94%EC%9E%A5-SNS?t=SgXCDRehHM8I9qqI-1
+`Design/` 폴더의 HTML은 레이아웃, 색상, 간격, UI hierarchy 참고용입니다.  
+각 `screen.png`는 현재 MVP의 시각 기준 및 임시 이미지 placeholder로 사용하거나 참고합니다.
 
-> 주요 화면: Explore / Look Detail / AR Coaching / Completed / Creator Studio
----
+### Home
 
-## MVP Scope
-**Daily 룩** 중심으로 아래 3종 파트를 1차 완성 범위로 잡습니다.
+![Home screen](Design/Home/screen.png)
 
-- **Blush(블러셔)**: 타원/소프트 마스크 오버레이 + 방향 가이드
-- **Lip(립)**: 윤곽 + 그라데이션 영역 가이드
-- **Contour/Shading(쉐딩/컨투어)**: 턱선/광대 밴드 오버레이 + 블렌딩 방향 가이드
+### Look Detail
 
-> MVP의 목표는 “색 정확도 평가”가 아니라 **위치/방향/범위/진행률 코칭**입니다.
+![Look Detail screen](Design/Look%20Detail/screen.png)
 
----
+### AR Coaching
 
-## Key Features
+![AR Coaching screen](Design/AR%20Coaching/screen.png)
 
-### For Users
-- **Explore/Feed**: 룩 탐색(태그/난이도/소요시간/트렌딩)
-- **Look Detail**: 레시피 개요(스텝/제품/대체제품)
-- **AR Coaching**
-  - 얼굴 위 오버레이(soft mask / ellipse / band)
-  - 모션 가이드(방향/스트로크 힌트)
-  - 진행률(coverage %) + 간단 피드백 토스트
-  - 트래킹/조명 상태(Tracking stable / Too dark)
-- **Completed Review**
-  - 전/후 비교
-  - 요약(완주, 일관성/균형 지표)
-  - 제품 리스트 + 대체 제품 + 저장/공유/재시도
+### Look Completed
 
-### For Creators
-- **Creator Studio**
-  - 튜토리얼 업로드
-  - 스텝 타임라인 편집(split/merge/reorder)
-  - 얼굴 오버레이 편집(ellipse / soft mask brush / band / mirror L/R)
-  - 스텝 속성(카테고리, 한 문장 안내, 방향, 강도)
-  - 제품 연결(스텝별 제품/대체제품)
-  - AR Preview 시뮬레이션
-  - Publish(검증/에러 상태 포함)
+![Look Completed screen](Design/Look%20Completed/screen.png)
 
----
+### Creator Profile
 
-## Product Concept
+![Creator Profile screen](Design/Creator%20Profile/screen.png)
 
-### Look Recipe = Procedure + Face-Coordinate Actions
-룩은 “예쁘다”가 아니라 **재현 가능한 절차**로 저장됩니다.
+### Creator Editor
 
-- Step = (Region) + (Action) + (Intensity) + (Tool/Product)
-- Region은 얼굴 랜드마크 기반 **정규화 좌표계**에서 정의 → 얼굴 형태가 달라도 적용 가능
+Creator Editor는 현재 MVP 범위에서 제외되어 있으며, 추후 creator-facing 기능 구현 시 참고합니다.
 
----
+![Creator Editor screen](Design/Creator%20Editor/screen.png)
 
-## Architecture (High Level)
+## Tech Stack
 
-### Mobile (Client)
-- 전면 카메라 + 얼굴 트래킹
-- AR 오버레이 렌더러
-- 스텝 진행 UI(바텀시트 + Next gating)
-- 전/후 캡처(완료 화면)
+- Expo
+- React Native
+- TypeScript
+- Expo Router
+- React Native `StyleSheet`
+- Expo Web for desktop development review
 
-### Backend
-- Look / Steps / Products 저장 및 조회
-- Creator 업로드 파이프라인
-- 추천/탐색(태그, 난이도, 트렌딩)
-- 이벤트 트래킹(완주율/이탈 구간)
+UI는 웹앱으로 재작성하지 않았고, `div`, `img`, `p`, `button` 같은 HTML 태그를 직접 사용하지 않습니다.  
+주요 UI는 `View`, `Text`, `Image`, `Pressable`, `ScrollView`, `FlatList`, `SafeAreaView` 등 React Native 컴포넌트로 구성되어 있습니다.
 
-### (Optional) AI Pipeline (Future)
-- 영상에서 스텝 분할(음성/화면 변화/도구 움직임)
-- 적용 부위 추정(세그먼트/색 변화)
-- 동작 분류(pat/swipe/blend)
+## Project Structure
 
-> 초기에는 “자동 100%”보다 **자동 초안 + 크리에이터 편집/승인**으로 품질을 확보합니다.
+```text
+app/
+  _layout.tsx
+  index.tsx
+  look/
+    [id].tsx
+  coaching/
+    [id].tsx
+  completed/
+    [id].tsx
+  creator/
+    [id].tsx
 
----
-
-## Recipe Data Model (Simplified)
-
-```json
-{
-  "lookId": "look_123",
-  "title": "Natural Sun-Kissed Glow",
-  "difficulty": "easy",
-  "estimatedTimeSec": 900,
-  "products": [
-    { "category": "blush", "brand": "NARS", "name": "Orgasm", "shadeName": "Peach Pink" }
-  ],
-  "steps": [
-    {
-      "order": 3,
-      "category": "blush",
-      "name": "Blush – Left Cheek",
-      "instructionText": "Apply upward along the cheekbone for a lifted effect.",
-      "faceAction": {
-        "overlay": { "type": "ellipse", "softEdge": 0.7 },
-        "motionGuide": { "type": "arrows", "direction": "outward" },
-        "intensityGuide": { "target": 0.6 }
-      },
-      "requirements": { "coverageMin": 0.4, "timeMinSec": 10 }
-    }
-  ]
-}
+src/
+  shared/
+    components/
+    constants/
+    data/
+  features/
+    home/
+    look/
+    coaching/
+    creator/
 ```
 
----
+## Run
 
-## Roadmap
+Install dependencies:
 
-### v0 (MVP)
-- Daily 룩: **Blush + Lip + Contour**
-- Creator Studio 레시피 편집기
-- AR 코칭(오버레이 + 진행률 + 단순 피드백)
-- 완료 리뷰 + 저장/공유
+```bash
+npm install
+```
 
-### v1
-- 코칭 고도화(도구/손 움직임 힌트)
-- 개인화(선호 강도/얼굴 타입)
-- 대체 제품 추천 강화
-- 크리에이터 대시보드(완주율/드롭오프)
+Run for mobile development:
 
-### v2
-- 튜토리얼 기반 반자동 레시피 추출
-- SDK/B2B(뷰티 커머스/브랜드 앱 연동)
+```bash
+npx expo start
+```
 
----
+Run on desktop with Expo Web for quick UI review:
 
-## Getting Started
-> WIP — 실행 가능한 프로토타입과 설치 가이드는 추후 추가됩니다.
+```bash
+npx expo start --web
+```
 
----
+Typecheck:
 
-## License
-TBD
+```bash
+npm run typecheck
+```
+
+## Verification
+
+최근 확인한 검증 커맨드:
+
+```bash
+npm run typecheck
+npx expo install --check
+npx expo export --platform web
+```
+
+## Notes
+
+- Primary target은 iOS/Android 모바일 앱입니다.
+- Expo Web은 개발 중 빠른 UI 리뷰를 위한 보조 실행 환경입니다.
+- 현재 AR Coaching 화면은 실제 AR이 아니라 mock camera 배경과 native overlay shape로 구성되어 있습니다.
+- `Design/**/screen.png`는 임시 visual asset 및 design reference로만 사용합니다.
