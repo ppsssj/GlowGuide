@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Look Completed - AR Makeup Coach</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6195d",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211116",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .before-after-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: white;
+            cursor: ew-resize;
+            z-index: 10;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-primary/10">
+<div class="flex items-center justify-between max-w-2xl mx-auto">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="text-center">
+<h1 class="text-xl font-bold tracking-tight">Look Completed!</h1>
+<p class="text-xs font-medium text-primary uppercase tracking-widest">Total time: 14m 22s</p>
+</div>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-4 py-6 space-y-8">
+<!-- Comparison Slider Section -->
+<section class="space-y-4">
+<div class="before-after-container bg-slate-200 dark:bg-slate-800 shadow-xl relative">
+<!-- After Image (Background) -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Woman with full professional makeup look applied" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkzjHe1Ta016iqfddpdhO8gs10nuKmvHGk3iZ22lS9U2mwU79Vl8pVFbegye48Wxb-_LXHpMQEpPFqyFyqJDrRs8C0Mb0E21atFLnLsC-5EBVAC8auhprOdl1cgS5xrvFWcdc1jmcVXZX5RFhU9ui3oPpBN3jEtB3feyXOpZ4768yzi1IevTOmKdI_0OfGmJOoV9oxdCGPl-wJH-Mi_fiZT9OrYJ6dYXcPAs3LSqsASwpWFd8IV85b9dYGm8eSaGbdOL9DPflgHlc')"></div>
+<!-- Before Image (Overlay with Clip) -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Woman with natural face before makeup application" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAphXsDRVC7Vpf7odNhPpOa2C5LTicH_03XZmrg-JKLTluQprkICRK91aFvjr1bU1xQRHR4NuPcW9DOWNI6ObqwGdYGsrctOmngVoxxy3WlU97FWh_KGvDdLWLZEzjxCXTdHLLEB8N0MH3d3WBSLcRKBDG9YDN0INr-ZiIJE-P7s4azhnf0LWC7hhU6PzVtWnW2U0jPpHYHpy1GAk7Ro2YTtBXVPOYZPhs4Y56UZ5DV_MDo-YZRw-1bZUtW_eaTkQuiOZnxPVipOuY'); clip-path: inset(0 50% 0 0);"></div>
+<!-- Labels -->
+<div class="absolute top-4 left-4 bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase">Before</div>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase">After</div>
+<!-- Handle -->
+<div class="slider-handle">
+<div class="slider-button">
+<span class="material-symbols-outlined text-primary">unfold_more</span>
+</div>
+</div>
+</div>
+<p class="text-center text-sm text-slate-500 dark:text-slate-400">Slide to compare your transformation</p>
+</section>
+<!-- Performance Stats -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full border-4 border-primary flex items-center justify-center mb-3">
+<span class="text-xl font-bold text-primary">92%</span>
+</div>
+<h3 class="font-bold text-sm">Precision</h3>
+<p class="text-xs text-slate-500">Expert Level Accuracy</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-3 text-primary">
+<span class="material-symbols-outlined text-4xl">workspace_premium</span>
+</div>
+<h3 class="font-bold text-sm">Achievement</h3>
+<p class="text-xs text-slate-500">Consistency Master</p>
+</div>
+</section>
+<!-- Actions Hub -->
+<section class="flex flex-col gap-3">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-full shadow-lg shadow-primary/25 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">favorite</span>
+                Save to My Looks
+            </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold py-3 rounded-full flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+                    Try Again
+                </button>
+<button class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold py-3 rounded-full flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">ios_share</span>
+                    Share
+                </button>
+</div>
+</section>
+<!-- Products Used -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold">Products Used</h2>
+<span class="text-xs text-slate-500 font-medium">4 Items</span>
+</div>
+<div class="space-y-3">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="w-20 h-20 rounded-xl bg-slate-50 dark:bg-slate-800 flex-shrink-0 p-2 overflow-hidden">
+<img alt="Primer bottle" class="w-full h-full object-contain" data-alt="High-end makeup primer bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtBBu-sAXsJ4RNykRuH_2S9FdgFeqI6jkvhzXcnDEkDks8Is8by8QRyjupY5_1NHQ5kHDNtETcykVD3brTATbb1hSDczTrWGZniyD3KaW4f-l7C-iJqry0QvU2Cn2N6Wnr480wq-IuTPLdGOuYcF8DY_y8ZaR-3HLcTZ0oVa8cBoPcYU3ZfQXRSReTQhA-veN7j2wk_78ZDRfkQFneaLev0y50i_ov5WTSp8MbzXlj8rqO5RHrylcdGVsKJLlggWoSAlOvLVmI5D8"/>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary uppercase">Glow Beauty</p>
+<h3 class="font-bold text-sm">Hydrating Silk Primer</h3>
+<p class="text-xs text-slate-500">Universal Clear</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full hover:bg-primary/20 transition-colors">Buy Now $32</button>
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">link</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="w-20 h-20 rounded-xl bg-slate-50 dark:bg-slate-800 flex-shrink-0 p-2 overflow-hidden">
+<img alt="Lipstick tube" class="w-full h-full object-contain" data-alt="Matte red lipstick in elegant packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5SuOERI0c4TzxR7hXSVpGps-Q4h6mYAfG42kbNYrL7UvernXbMUs8uZLtExN7hSMXxPsA-cL3VQ3S5dTxm4OYH5e0mlFTSsVEl1gxWvEF8i_4IfC23VBaW0cRQNTx4TDWImoa8ONK-Frj2wKj4zAH785ztvckpriQpjN0UFyLzAS-wgxJYnm8CO9gZlIAPYAQ4bjmyJq8wkB_QMZm90UpYkU4dc50Ve51YKDaIfBSRZPoVji__WGFW0r5ifgpD5qDNVmApo1oe8Y"/>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary uppercase">Velvet Kiss</p>
+<h3 class="font-bold text-sm">Matte Liquid Lipstick</h3>
+<p class="text-xs text-slate-500">Ruby Radiance</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full hover:bg-primary/20 transition-colors">Buy Now $24</button>
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">link</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommendations Carousel -->
+<section class="space-y-4 pb-12">
+<h2 class="text-lg font-bold">You might also like...</h2>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<!-- Look Card 1 -->
+<div class="flex-shrink-0 w-48 rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="h-56 bg-cover bg-center" data-alt="Golden hour sunset makeup look" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJX2EG-4GNXbyCaJVzoo1BZfvzIVvAyvsQP3ClS4x9UqaWbYsief5xxx-CFINB1JPG_-aBkFT-i-FOQTZZhF_eK4G5V7j3jwr1DQyrg54Wd04fcTsMj4oIVAe6bz_9-9Jl_l1sKa_2UgbDyp5kfm1MAXG_245lZ5jpLuGPmfa0VRC0v8f7tpqiMMvEkvmlUw7nX1VtQGHnJfzX-kxTiEfOclU2YVr5KyfajdEsDbcebovGjDVACTpuIeBVhpMYF6ICDwii0rCzszM')"></div>
+<div class="p-3">
+<h4 class="font-bold text-sm">Sunset Glow</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-xs font-fill">star</span>
+<span class="text-[10px] font-medium text-slate-500 uppercase">Intermediate</span>
+</div>
+</div>
+</div>
+<!-- Look Card 2 -->
+<div class="flex-shrink-0 w-48 rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="h-56 bg-cover bg-center" data-alt="Evening glam smoky eye makeup look" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX5Qt7NQ5yw_4o9rPvG8TsjF-Fd6LS9ckrj2UZ4zdx6uUmQKID7YnFAWCkQIixcLe7Cu9alc1oPuQeVVF1tBlMrKMShZwJHp1gEyXwrXtqWOK_KG6QhFMhrVykzry9Tp44lJVy9lh9PqhCHVf9zLvuYIBs3Q4nTzqudbWBcZdAHBULQVlV5xHPpqXuYNJ8byucxxsvvSl11ma7sjB6DR_2qCyQasxItczqc-w5y-IU3YpukWW_uO9bcBL9xQexz7SkzGrEQaKDhCg')"></div>
+<div class="p-3">
+<h4 class="font-bold text-sm">Evening Glam</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-xs font-fill">star</span>
+<span class="text-[10px] font-medium text-slate-500 uppercase">Expert</span>
+</div>
+</div>
+</div>
+<!-- Look Card 3 -->
+<div class="flex-shrink-0 w-48 rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="h-56 bg-cover bg-center" data-alt="Clean girl minimalist makeup look" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAD_eToo01qHNkoyeo3HkMkEEm149zC-R3bnH2xf2DdwhF2SwG1OcgKcXvHM_VBN1WV4XgOld-NZjtK7af10XoY7bvV9xlUgR8SRHTUTieeOX9p093HjzpMJCU9WuPeojJN7kXnRJTVYV3A211eBUkGbTO4ZRuAPIQIpK1xLYfh2JnRz2ESLymHADjLrHh0Cegn7z4tl8Ga3PHW0eQne7tVTr1JqH5n302c-pRULTsK7x60YWOnnxttM6Iv8F_IaxRdGP8ZK_klsgY')"></div>
+<div class="p-3">
+<h4 class="font-bold text-sm">Clean Aesthetic</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-xs font-fill">star</span>
+<span class="text-[10px] font-medium text-slate-500 uppercase">Beginner</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (reused and modified for theme) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 px-4 pb-6 pt-3 z-50">
+<div class="flex justify-around items-center max-w-2xl mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill">camera</span>
+<span class="text-[10px] font-medium">AR Coach</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">My Looks</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-medium">Shop</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .font-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

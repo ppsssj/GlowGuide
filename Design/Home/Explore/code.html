@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AR Makeup Coaching - Explore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6195d",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211116",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden">
+<!-- Header & Search Section -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">face_3</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">GlowGuide</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+</button>
+</div>
+<div class="relative">
+<label class="flex items-center w-full h-12 px-4 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-slate-400 mr-2">search</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400 dark:text-slate-100" placeholder="Search looks, creators, products" type="text"/>
+</label>
+</div>
+</header>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 py-3 overflow-x-auto no-scrollbar whitespace-nowrap">
+<button class="px-5 py-2 rounded-full bg-primary text-white text-sm font-medium shadow-md shadow-primary/20">All</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-100 dark:border-slate-700">Daily</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-100 dark:border-slate-700">Blush</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-100 dark:border-slate-700">Lip</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-100 dark:border-slate-700">Contour</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-100 dark:border-slate-700">Easy</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-100 dark:border-slate-700">Trending</button>
+</div>
+<!-- Feed Content -->
+<main class="flex-1 px-4 py-2 space-y-6 pb-24">
+<!-- Card 1 -->
+<div class="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of natural sun kissed makeup look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk_DOgBZ8rHTQviF09A_fWT7TLE0au_ITijb8xoqYkAxxIYLVHYMPSfYepw61QVJJ_vHrCDXpxRzaruPoefIuDxeOGuVwXDqqI5xB4FE6tsJGK8iPRhszqMl9xeR0e5ZUi1nUVHrp_kCcGI6-jWTbsYUCwgiWRHzCXL9yGXNThMHD6Vt1kCVfZFpAILulUVGogssi8S4ZvzSNiviq8SJunl2MDIMpaIHkb9dbf0fGagV4J9PwGMt2rMoaEohMWe5YPw2cWtNX5RbM"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-wider rounded-full">Easy</span>
+<span class="px-3 py-1 bg-black/30 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider rounded-full">15 mins</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 mb-3">
+<img class="w-6 h-6 rounded-full object-cover border border-primary/20" data-alt="Portrait of Sophie Chen makeup creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu6fJ93AWUbxPcYlw88h_WLst5axa0TC6S4Bikz-jXbGobg6ahPrG4l6048aDQ0yUANrQ8H_SpfUtg7_Gbm2BybcZq7hES8XV1xlJvr973qMq-t-bONY-GL5r1MQ7lWrFeBuqndCPYTlbhAKxAqyoFmbDdukBoDKgMRWuuDqi3WPTkMq6gt8Jl_4FW__LcerCmB_gQId4VToqaGonTNaRXio4MaWgif4ysAmGhPfew3C9Tuzi-igmTrZWEepSth3JX0-h3YOUkKJw"/>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Sophie Chen</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 text-slate-900 dark:text-slate-100">Natural Sun-Kissed Glow</h3>
+<div class="flex gap-2 mb-4">
+<span class="text-xs font-semibold text-primary">#Daily</span>
+<span class="text-xs font-semibold text-primary">#Blush</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-bold flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined">view_in_ar</span>
+                        Try in AR
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bold crimson red lip makeup tutorial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_e0MVN4-3atT8JUK0Ebu-m48xuHzdlMvMx6HNEMljqKE9_ZluTaTGQfJCN6UYHi0rLlgihwro0LUueh9gEnbfiWN8G1pGKTiXFVMxEVxnGG1bxD1Uz3frMCxMx1WPKoQII1kjBqKInlAHAK4q6X23vVIEpYTRXASlF7N5lTDoYbzC-Zusk1_225FJ4M900GhSQbIvGrH-XuzgRVpnMPoQdCTHbHg6RKZ3fDr71yFefQ7GKTocH58wNDlwkggfEJ6n1WJ7zLtLGmI"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-wider rounded-full">Intermediate</span>
+<span class="px-3 py-1 bg-black/30 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider rounded-full">10 mins</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 mb-3">
+<img class="w-6 h-6 rounded-full object-cover border border-primary/20" data-alt="Portrait of Marcus J makeup artist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFhTpgDe8GHkI2pAsGdPzixwTg6x5KtqxyRsbt1aNIT-ZLy8gLVUaGHdcIeNTZOQ-A751zWdmzqIAGoD_RQ-puUMYrWHGqFOgNMzvMNnRUk2f2A_mJC-lFsSBqCXGYt99b0QnfDhycxlrPQlkTFgDOz3VtH4LRlrrAI6DKD0qtCgWxfpacafczmsGa69xSwWuYZV589dwZbtRA0AWSIHqz6gWEMAlszCAvhVCkuLQLz8HKrDiBstrYnxnSCe53qxmvwJ_rmEnDqzs"/>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Marcus J.</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 text-slate-900 dark:text-slate-100">Bold Crimson Evening</h3>
+<div class="flex gap-2 mb-4">
+<span class="text-xs font-semibold text-primary">#Lip</span>
+<span class="text-xs font-semibold text-primary">#Trending</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-bold flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined">view_in_ar</span>
+                        Try in AR
+                    </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sharp contour and highlighting makeup style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK8a-3rDHJMB3VblkAo9F-6ziodJXqHoXfaIHqRjFXfKe-Nz-BDpZaTlWcdsW80Q89M6rVj893vawq17aAXfXNtPQ_f1J8THTko_76DTJYyoXvC3kGGU23rE40-gwQpe-ChAH5c6tBCypTfY9bGgTO_i1FLwtcXhyNxd7xes1_CKpsGdJyHyLRDSmLWFz7_phtK6f4of51dhswMtPoc47ActKXTuo8r9uvQ2_CNyS7kCfuXHvMI8gNL0KZprhk5WGil0umEa7L42k"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-wider rounded-full">Pro</span>
+<span class="px-3 py-1 bg-black/30 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider rounded-full">25 mins</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 mb-3">
+<img class="w-6 h-6 rounded-full object-cover border border-primary/20" data-alt="Portrait of Elena K makeup educator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtd78kTEtvGrbNtMRjEjOqmEKPbimdv1LPNK5rch9FyMzIFHqi7obEdmRSqo2uJ4Yn9xoXWwfxTufxw_Cw9fO_jmrrguxi8Q1RWNZ--n_ukopLlv2wv1H28axsEFm4QiSEqaBjodVMca1Br_9TKWhI7JFANsOVnC6qSKavc0yPpcrAuNtBQr0TpCd6axKRb-eCxwNi_smkkDv_IJoug-NKtVHuB0QjXvYUhqrQRG6UFXKqYjJv_d7qlnY9cEsrLS-aaUXmOfN1_BU"/>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Elena K.</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 text-slate-900 dark:text-slate-100">Sculpted High-Definition</h3>
+<div class="flex gap-2 mb-4">
+<span class="text-xs font-semibold text-primary">#Contour</span>
+<span class="text-xs font-semibold text-primary">#Glam</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-bold flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined">view_in_ar</span>
+                        Try in AR
+                    </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 flex items-center justify-around py-3 px-6 z-30">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">Saved</span>
+</a>
+<a class="flex flex-col items-center -mt-8" href="#">
+<div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-medium">Shop</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>
