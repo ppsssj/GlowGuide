@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
 import { Card } from "../../../shared/components/Card";
 import { colors } from "../../../shared/constants/colors";
@@ -17,7 +18,11 @@ export function HowToApplyList({ steps }: HowToApplyListProps) {
         <Card key={step.id} style={[styles.step, index === 0 && styles.featuredStep]}>
           <View style={styles.stepTop}>
             <View style={[styles.number, index === 0 && styles.activeNumber]}>
-              <Text style={[styles.numberText, index === 0 && styles.activeNumberText]}>{index + 1}</Text>
+              <Ionicons
+                name={index === 0 ? "sparkles" : "brush-outline"}
+                size={18}
+                color={index === 0 ? colors.primary : colors.muted}
+              />
             </View>
             <View style={styles.stepCopy}>
               <Text style={styles.stepLabel}>Step {index + 1}</Text>
@@ -65,13 +70,6 @@ const styles = StyleSheet.create({
   },
   activeNumber: {
     backgroundColor: colors.blushSoft
-  },
-  numberText: {
-    color: colors.muted,
-    fontWeight: "900"
-  },
-  activeNumberText: {
-    color: colors.primary
   },
   stepCopy: {
     flex: 1

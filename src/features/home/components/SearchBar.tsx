@@ -1,4 +1,5 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { StyleSheet, TextInput, View } from "react-native";
 import { colors } from "../../../shared/constants/colors";
 import { radius } from "../../../shared/constants/radius";
 import { spacing } from "../../../shared/constants/spacing";
@@ -6,7 +7,7 @@ import { spacing } from "../../../shared/constants/spacing";
 export function SearchBar() {
   return (
     <View style={styles.wrap}>
-      <Text style={styles.icon}>⌕</Text>
+      <Ionicons name="search" size={19} color={colors.muted} />
       <TextInput
         placeholder="Search looks, creators, products"
         placeholderTextColor={colors.muted}
@@ -28,10 +29,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.sm
-  },
-  icon: {
-    color: colors.muted,
-    fontSize: 22
   },
   input: {
     flex: 1,

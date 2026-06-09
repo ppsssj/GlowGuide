@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { AppButton } from "../../../shared/components/AppButton";
 import { colors } from "../../../shared/constants/colors";
@@ -14,7 +15,7 @@ export function CreatorHeader({ creator }: CreatorHeaderProps) {
     <View style={styles.wrap}>
       <View style={styles.avatarWrap}>
         <Image source={creator.avatar} style={styles.avatar} />
-        <View style={styles.verified}><Text style={styles.verifiedText}>✓</Text></View>
+        <View style={styles.verified}><Ionicons name="checkmark" size={15} color={colors.surface} /></View>
       </View>
       <Text style={styles.name}>{creator.name}</Text>
       <Text style={styles.meta}>{creator.title} • {creator.location}</Text>
@@ -55,10 +56,6 @@ const styles = StyleSheet.create({
     borderColor: colors.surface,
     alignItems: "center",
     justifyContent: "center"
-  },
-  verifiedText: {
-    color: colors.surface,
-    fontWeight: "900"
   },
   name: {
     color: colors.ink,

@@ -1,4 +1,5 @@
 import type { ImageSourcePropType } from "react-native";
+import { imageAssets } from "../assets/imageAssets";
 import { products, type Product } from "./mockProducts";
 
 export type CoachingStep = {
@@ -19,6 +20,7 @@ export type Look = {
   estimatedTime: string;
   tags: string[];
   hero: ImageSourcePropType;
+  thumbnail: ImageSourcePropType;
   summary: string;
   products: Product[];
   steps: CoachingStep[];
@@ -41,7 +43,8 @@ export const looks: Look[] = [
     difficulty: "Medium",
     estimatedTime: "12 mins",
     tags: ["Daily", "Blush", "Trending"],
-    hero: require("../../../Design/Look Detail/screen.png"),
+    hero: imageAssets.lookRadiantRose,
+    thumbnail: imageAssets.lookRadiantRose,
     summary: "A polished rose glow with lifted blush placement, luminous skin, and a soft blurred lip.",
     products: products.slice(0, 4),
     steps: radiantSteps
@@ -54,10 +57,25 @@ export const looks: Look[] = [
     difficulty: "Easy",
     estimatedTime: "15 mins",
     tags: ["Daily", "Blush"],
-    hero: require("../../../Design/Home/screen.png"),
+    hero: imageAssets.lookSunkissed,
+    thumbnail: imageAssets.lookSunkissed,
     summary: "A beginner-friendly warm cheek look that teaches cheekbone placement and blending.",
     products: [products[0], products[2], products[3]],
     steps: radiantSteps.slice(0, 4)
+  },
+  {
+    id: "bold-crimson-evening",
+    title: "Bold Crimson Evening",
+    creatorId: "mina-rose",
+    creatorName: "Mina Rose",
+    difficulty: "Intermediate",
+    estimatedTime: "10 mins",
+    tags: ["Lip", "Trending"],
+    hero: imageAssets.lookCrimsonLip,
+    thumbnail: imageAssets.lookCrimsonLip,
+    summary: "A precise velvet lip lesson with clean edges, center saturation, and soft outer blur.",
+    products: [products[0], products[3]],
+    steps: radiantSteps.filter((step) => step.category === "base" || step.category === "lip")
   },
   {
     id: "sculpted-hd",
@@ -67,10 +85,25 @@ export const looks: Look[] = [
     difficulty: "Pro",
     estimatedTime: "25 mins",
     tags: ["Contour", "Glam"],
-    hero: require("../../../Design/Creator Profile/screen.png"),
+    hero: imageAssets.lookSculptedHd,
+    thumbnail: imageAssets.lookSculptedHd,
     summary: "Precise contour bands and highlight points for a high-definition evening finish.",
     products: [products[1], products[4], products[2]],
     steps: [...radiantSteps, { id: "contour", category: "contour", title: "Contour Band", instruction: "Trace beneath the cheekbone and blend upward, never downward.", productId: "contour", coverage: 35 }]
+  },
+  {
+    id: "peach-velvet",
+    title: "Peach Velvet",
+    creatorId: "mina-rose",
+    creatorName: "Mina Rose",
+    difficulty: "Easy",
+    estimatedTime: "14 mins",
+    tags: ["Daily", "Blush"],
+    hero: imageAssets.creatorGridPeach,
+    thumbnail: imageAssets.creatorGridPeach,
+    summary: "A soft peach complexion look focused on diffused blush edges and balanced glow.",
+    products: [products[0], products[1], products[2]],
+    steps: radiantSteps.slice(0, 4)
   }
 ];
 

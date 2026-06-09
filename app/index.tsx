@@ -3,6 +3,7 @@ import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
 import { BottomTabBar } from "../src/shared/components/BottomTabBar";
 import { Header } from "../src/shared/components/Header";
 import { colors } from "../src/shared/constants/colors";
+import { layout } from "../src/shared/constants/layout";
 import { CategoryTabs } from "../src/features/home/components/CategoryTabs";
 import { LookCard } from "../src/features/home/components/LookCard";
 import { SearchBar } from "../src/features/home/components/SearchBar";
@@ -45,6 +46,9 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    width: "100%",
+    maxWidth: layout.maxWidth,
+    alignSelf: "center",
     backgroundColor: colors.background
   },
   list: {

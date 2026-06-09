@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { router, useLocalSearchParams } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { colors } from "../../src/shared/constants/colors";
+import { layout } from "../../src/shared/constants/layout";
 import { spacing } from "../../src/shared/constants/spacing";
 import { CoachingBottomSheet } from "../../src/features/coaching/components/CoachingBottomSheet";
 import { CoachingProgress } from "../../src/features/coaching/components/CoachingProgress";
@@ -25,21 +27,23 @@ export default function CoachingScreen() {
 
   return (
     <SafeAreaView style={styles.safe}>
-      <MockCameraView look={look} stepIndex={stepIndex} />
-      <CoachingProgress title={look.title} current={stepIndex} total={look.steps.length} />
-      <View style={styles.status}>
-        <View style={styles.dot} />
-        <Text style={styles.statusText}>Tracking stable</Text>
+      <View style={styles.container}>
+        <MockCameraView look={look} stepIndex={stepIndex} />
+        <CoachingProgress title={look.title} current={stepIndex} total={look.steps.length} />
+        <View style={styles.status}>
+          <View style={styles.dot} />
+          <Text style={styles.statusText}>Tracking stable</Text>
+        </View>
+        <View style={styles.toast}>
+          <Text style={styles.toastText}>Move slightly upward to the cheekbone</Text>
+        </View>
+        <View style={styles.controls}>
+          <View style={styles.control}><Ionicons name="add" size={22} color={colors.text} /></View>
+          <View style={styles.control}><Ionicons name="remove" size={22} color={colors.text} /></View>
+          <View style={[styles.control, styles.focus]}><Ionicons name="scan" size={21} color={colors.surface} /></View>
+        </View>
+        <CoachingBottomSheet step={step} isLast={isLast} onNext={advance} onSkip={advance} />
       </View>
-      <View style={styles.toast}>
-        <Text style={styles.toastText}>Move slightly upward to the cheekbone</Text>
-      </View>
-      <View style={styles.controls}>
-        <Text style={styles.control}>＋</Text>
-        <Text style={styles.control}>−</Text>
-        <Text style={[styles.control, styles.focus]}>◎</Text>
-      </View>
-      <CoachingBottomSheet step={step} isLast={isLast} onNext={advance} onSkip={advance} />
     </SafeAreaView>
   );
 }
@@ -47,6 +51,14 @@ export default function CoachingScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
+    backgroundColor: colors.camera
+  },
+  container: {
+    flex: 1,
+    width: "100%",
+    maxWidth: layout.maxWidth,
+    alignSelf: "center",
+    overflow: "hidden",
     backgroundColor: colors.camera
   },
   status: {
@@ -98,13 +110,14 @@ const styles = StyleSheet.create({
     width: 42,
     height: 42,
     borderRadius: 21,
-    overflow: "hidden",
     backgroundColor: colors.surface,
-    color: colors.text,
-    textAlign: "center",
-    textAlignVertical: "center",
-    fontSize: 22,
-    fontWeight: "900"
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.12,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 5 },
+    elevation: 3
   },
   focus: {
     backgroundColor: colors.primary,

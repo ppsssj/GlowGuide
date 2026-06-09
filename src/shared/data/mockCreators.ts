@@ -1,4 +1,5 @@
 import type { ImageSourcePropType } from "react-native";
+import { imageAssets } from "../assets/imageAssets";
 
 export type Creator = {
   id: string;
@@ -22,7 +23,7 @@ export const creators: Creator[] = [
     followers: "1.2M",
     following: "850",
     likes: "15M",
-    avatar: require("../../../Design/Creator Profile/screen.png")
+    avatar: imageAssets.creatorMinaAvatar
   },
   {
     id: "sophie-chen",
@@ -33,7 +34,7 @@ export const creators: Creator[] = [
     followers: "820K",
     following: "410",
     likes: "7.8M",
-    avatar: require("../../../Design/Home/screen.png")
+    avatar: imageAssets.lookSunkissed
   }
 ];
 

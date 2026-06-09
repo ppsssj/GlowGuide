@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { router } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../shared/constants/colors";
 import { radius } from "../../../shared/constants/radius";
 import { spacing } from "../../../shared/constants/spacing";
@@ -15,8 +16,8 @@ export function LookHero({ look }: LookHeroProps) {
       <Image source={look.hero} style={styles.image} />
       <View style={styles.scrim} />
       <View style={styles.topControls}>
-        <Pressable onPress={() => router.back()} style={styles.circle}><Text style={styles.controlText}>‹</Text></Pressable>
-        <View style={styles.circle}><Text style={styles.share}>↗</Text></View>
+        <Pressable onPress={() => router.back()} style={styles.circle}><Ionicons name="arrow-back" size={21} color={colors.surface} /></Pressable>
+        <View style={styles.circle}><Ionicons name="share-social-outline" size={20} color={colors.surface} /></View>
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>{look.title}</Text>
@@ -61,16 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.28)",
     alignItems: "center",
     justifyContent: "center"
-  },
-  controlText: {
-    color: colors.surface,
-    fontSize: 34,
-    marginTop: -3
-  },
-  share: {
-    color: colors.surface,
-    fontSize: 20,
-    fontWeight: "900"
   },
   content: {
     position: "absolute",

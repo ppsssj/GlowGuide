@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { AppButton } from "../../src/shared/components/AppButton";
 import { Badge } from "../../src/shared/components/Badge";
 import { colors } from "../../src/shared/constants/colors";
+import { layout } from "../../src/shared/constants/layout";
 import { radius } from "../../src/shared/constants/radius";
 import { spacing } from "../../src/shared/constants/spacing";
 import { HowToApplyList } from "../../src/features/look/components/HowToApplyList";
@@ -16,25 +17,27 @@ export default function LookDetailScreen() {
 
   return (
     <SafeAreaView style={styles.safe}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
-        <LookHero look={look} />
-        <View style={styles.stats}>
-          <Badge label={look.estimatedTime} />
-          <Badge label={look.difficulty} />
-          <Badge label={`${look.steps.length} Steps`} />
-        </View>
-        <View style={styles.summaryCard}>
-          <Text style={styles.summary}>{look.summary}</Text>
-          <View style={styles.tags}>
-            {look.tags.map((tag) => <Text key={tag} style={styles.tag}>#{tag}</Text>)}
+      <View style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
+          <LookHero look={look} />
+          <View style={styles.stats}>
+            <Badge label={look.estimatedTime} />
+            <Badge label={look.difficulty} />
+            <Badge label={`${look.steps.length} Steps`} />
           </View>
+          <View style={styles.summaryCard}>
+            <Text style={styles.summary}>{look.summary}</Text>
+            <View style={styles.tags}>
+              {look.tags.map((tag) => <Text key={tag} style={styles.tag}>#{tag}</Text>)}
+            </View>
+          </View>
+          <ProductList products={look.products} />
+          <HowToApplyList steps={look.steps} />
+        </ScrollView>
+        <View style={styles.footer}>
+          <AppButton icon="camera" label="Start AR Coaching" onPress={() => router.push(`/coaching/${look.id}`)} style={styles.start} />
+          <AppButton icon="bookmark-outline" label="" variant="secondary" style={styles.bookmark} />
         </View>
-        <ProductList products={look.products} />
-        <HowToApplyList steps={look.steps} />
-      </ScrollView>
-      <View style={styles.footer}>
-        <AppButton label="Start AR Coaching" onPress={() => router.push(`/coaching/${look.id}`)} style={styles.start} />
-        <AppButton label="♡" variant="secondary" style={styles.bookmark} />
       </View>
     </SafeAreaView>
   );
@@ -43,6 +46,13 @@ export default function LookDetailScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
+    backgroundColor: colors.background
+  },
+  container: {
+    flex: 1,
+    width: "100%",
+    maxWidth: layout.maxWidth,
+    alignSelf: "center",
     backgroundColor: colors.background
   },
   content: {

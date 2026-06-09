@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import { BottomTabBar } from "../../src/shared/components/BottomTabBar";
 import { Header } from "../../src/shared/components/Header";
 import { colors } from "../../src/shared/constants/colors";
+import { layout } from "../../src/shared/constants/layout";
 import { CreatorHeader } from "../../src/features/creator/components/CreatorHeader";
 import { CreatorLookGrid } from "../../src/features/creator/components/CreatorLookGrid";
 import { CreatorStats } from "../../src/features/creator/components/CreatorStats";
@@ -37,6 +38,9 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    width: "100%",
+    maxWidth: layout.maxWidth,
+    alignSelf: "center",
     backgroundColor: colors.background
   }
 });

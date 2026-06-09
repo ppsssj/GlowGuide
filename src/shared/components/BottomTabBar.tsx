@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { colors } from "../constants/colors";
 import { radius } from "../constants/radius";
@@ -8,11 +9,11 @@ type BottomTabBarProps = {
 };
 
 const tabs = [
-  { id: "home", label: "Explore", icon: "⌂" },
-  { id: "saved", label: "Saved", icon: "♡" },
-  { id: "create", label: "Create", icon: "+" },
-  { id: "shop", label: "Shop", icon: "◱" },
-  { id: "profile", label: "Profile", icon: "◎" }
+  { id: "home", label: "Explore", icon: "compass-outline", activeIcon: "compass" },
+  { id: "saved", label: "Saved", icon: "heart-outline", activeIcon: "heart" },
+  { id: "create", label: "Create", icon: "add", activeIcon: "add" },
+  { id: "shop", label: "Shop", icon: "bag-outline", activeIcon: "bag" },
+  { id: "profile", label: "Profile", icon: "person-outline", activeIcon: "person" }
 ] as const;
 
 export function BottomTabBar({ active = "home" }: BottomTabBarProps) {
@@ -30,7 +31,11 @@ export function BottomTabBar({ active = "home" }: BottomTabBarProps) {
             style={[styles.tab, tab.id === "create" && styles.createTab]}
           >
             <View style={[styles.iconWrap, isActive && styles.iconActive, tab.id === "create" && styles.createIcon]}>
-              <Text style={[styles.icon, isActive && styles.activeText, tab.id === "create" && styles.createText]}>{tab.icon}</Text>
+              <Ionicons
+                name={isActive ? tab.activeIcon : tab.icon}
+                size={tab.id === "create" ? 30 : 23}
+                color={tab.id === "create" ? colors.surface : isActive ? colors.primary : colors.muted}
+              />
             </View>
             <Text style={[styles.label, isActive && styles.activeText]}>{tab.label}</Text>
           </Pressable>
@@ -80,15 +85,6 @@ const styles = StyleSheet.create({
     height: 52,
     borderRadius: radius.pill,
     backgroundColor: colors.primary
-  },
-  icon: {
-    color: colors.muted,
-    fontSize: 22,
-    fontWeight: "800"
-  },
-  createText: {
-    color: colors.surface,
-    fontSize: 26
   },
   label: {
     color: colors.muted,

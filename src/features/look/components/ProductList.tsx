@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { Card } from "../../../shared/components/Card";
 import { colors } from "../../../shared/constants/colors";
 import { radius } from "../../../shared/constants/radius";
@@ -18,12 +19,14 @@ export function ProductList({ products }: ProductListProps) {
       </View>
       {products.map((product) => (
         <Card key={product.id} style={styles.product}>
-          <View style={styles.productIcon}><Text style={styles.productIconText}>◻</Text></View>
+          <View style={styles.productIcon}>
+            {product.image ? <Image source={product.image} style={styles.productImage} /> : <Ionicons name="cube-outline" size={22} color={colors.primary} />}
+          </View>
           <View style={styles.productCopy}>
             <Text style={styles.productName}>{product.name}</Text>
             <Text style={styles.productMeta}>{product.brand} - {product.shade}</Text>
           </View>
-          <Text style={styles.price}>{product.price}</Text>
+          <View style={styles.bag}><Ionicons name="bag-outline" size={16} color={colors.text} /></View>
         </Card>
       ))}
     </View>
@@ -65,9 +68,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  productIconText: {
-    color: colors.primary,
-    fontSize: 22
+  productImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: radius.md,
+    resizeMode: "cover"
   },
   productCopy: {
     flex: 1
@@ -82,9 +87,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 3
   },
-  price: {
-    color: colors.primary,
-    fontWeight: "900",
-    fontSize: 13
+  bag: {
+    width: 32,
+    height: 32,
+    borderRadius: radius.pill,
+    backgroundColor: colors.surfaceMuted,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });

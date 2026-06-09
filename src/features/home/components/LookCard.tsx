@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { router } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import { Badge } from "../../../shared/components/Badge";
 import { colors } from "../../../shared/constants/colors";
 import { radius } from "../../../shared/constants/radius";
@@ -14,7 +15,7 @@ export function LookCard({ look }: LookCardProps) {
   return (
     <Pressable onPress={() => router.push(`/look/${look.id}`)} style={({ pressed }) => [styles.card, pressed && styles.pressed]}>
       <View style={styles.imageWrap}>
-        <Image source={look.hero} style={styles.image} />
+        <Image source={look.thumbnail} style={styles.image} />
         <View style={styles.badges}>
           <Badge label={look.difficulty} />
           <Badge label={look.estimatedTime} tone="dark" />
@@ -22,7 +23,12 @@ export function LookCard({ look }: LookCardProps) {
       </View>
       <View style={styles.body}>
         <Pressable onPress={() => router.push(`/creator/${look.creatorId}`)}>
-          <Text style={styles.creator}>{look.creatorName}</Text>
+          <View style={styles.creatorRow}>
+            <View style={styles.creatorAvatar}>
+              <Text style={styles.creatorInitial}>{look.creatorName[0]}</Text>
+            </View>
+            <Text style={styles.creator}>{look.creatorName}</Text>
+          </View>
         </Pressable>
         <Text style={styles.title}>{look.title}</Text>
         <Text style={styles.summary}>{look.summary}</Text>
@@ -32,6 +38,7 @@ export function LookCard({ look }: LookCardProps) {
           ))}
         </View>
         <View style={styles.cta}>
+          <Ionicons name="scan" size={18} color={colors.surface} />
           <Text style={styles.ctaText}>Try in AR</Text>
         </View>
       </View>
@@ -76,11 +83,31 @@ const styles = StyleSheet.create({
   body: {
     padding: spacing.lg
   },
+  creatorRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginBottom: spacing.sm
+  },
+  creatorAvatar: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    backgroundColor: colors.blushSoft,
+    borderWidth: 1,
+    borderColor: colors.blush,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  creatorInitial: {
+    color: colors.primary,
+    fontWeight: "900",
+    fontSize: 11
+  },
   creator: {
     color: colors.muted,
     fontSize: 12,
-    fontWeight: "800",
-    marginBottom: spacing.sm
+    fontWeight: "800"
   },
   title: {
     color: colors.ink,
@@ -109,7 +136,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     backgroundColor: colors.primary,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    flexDirection: "row",
+    gap: spacing.sm
   },
   ctaText: {
     color: colors.surface,

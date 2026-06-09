@@ -1,6 +1,8 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { router } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../shared/constants/colors";
+import { imageAssets } from "../../../shared/assets/imageAssets";
 import { radius } from "../../../shared/constants/radius";
 import { spacing } from "../../../shared/constants/spacing";
 import type { Look } from "../../../shared/data/mockLooks";
@@ -18,17 +20,22 @@ export function CreatorLookGrid({ looks }: CreatorLookGridProps) {
         <Text style={styles.tab}>Series</Text>
       </View>
       <Pressable onPress={() => router.push(`/look/${looks[0]?.id}`)} style={styles.featured}>
-        <Image source={looks[0]?.hero} style={styles.featuredImage} />
+        <Image source={imageAssets.creatorFeaturedGoldenHour} style={styles.featuredImage} />
         <View style={styles.featuredScrim} />
         <View style={styles.featuredCopy}>
           <Text style={styles.badge}>Featured Masterclass</Text>
-          <Text style={styles.featuredTitle}>{looks[0]?.title}</Text>
+          <Text style={styles.featuredTitle}>Golden Hour Masterclass</Text>
+          <View style={styles.tryBadge}>
+            <Ionicons name="scan" size={15} color={colors.ink} />
+            <Text style={styles.tryBadgeText}>Try in AR</Text>
+          </View>
         </View>
       </Pressable>
       <View style={styles.grid}>
         {looks.map((look) => (
           <Pressable key={look.id} onPress={() => router.push(`/look/${look.id}`)} style={styles.tile}>
             <Image source={look.hero} style={styles.tileImage} />
+            <View style={styles.tileIcon}><Ionicons name="scan" size={16} color={colors.primary} /></View>
             <Text style={styles.tileTitle}>{look.title}</Text>
           </Pressable>
         ))}
@@ -103,6 +110,22 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "900"
   },
+  tryBadge: {
+    alignSelf: "flex-start",
+    marginTop: spacing.md,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    backgroundColor: "rgba(255,255,255,0.86)",
+    borderRadius: radius.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm
+  },
+  tryBadgeText: {
+    color: colors.ink,
+    fontSize: 12,
+    fontWeight: "900"
+  },
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -117,6 +140,17 @@ const styles = StyleSheet.create({
     aspectRatio: 0.75,
     borderRadius: radius.lg,
     backgroundColor: colors.surfaceMuted
+  },
+  tileIcon: {
+    position: "absolute",
+    right: spacing.sm,
+    top: spacing.sm,
+    width: 28,
+    height: 28,
+    borderRadius: radius.sm,
+    backgroundColor: "rgba(255,255,255,0.86)",
+    alignItems: "center",
+    justifyContent: "center"
   },
   tileTitle: {
     color: colors.text,

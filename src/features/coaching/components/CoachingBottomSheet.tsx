@@ -46,9 +46,14 @@ const styles = StyleSheet.create({
     paddingBottom: 34,
     borderTopLeftRadius: radius.xl,
     borderTopRightRadius: radius.xl,
-    backgroundColor: "rgba(255,255,255,0.84)",
+    backgroundColor: "rgba(255,255,255,0.88)",
     borderTopWidth: 1,
-    borderColor: "rgba(255,255,255,0.6)"
+    borderColor: "rgba(255,255,255,0.72)",
+    shadowColor: "#000",
+    shadowOpacity: 0.18,
+    shadowRadius: 24,
+    shadowOffset: { width: 0, height: -10 },
+    elevation: 8
   },
   handle: {
     width: 48,

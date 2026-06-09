@@ -1,4 +1,5 @@
-import { Pressable, StyleProp, StyleSheet, Text, ViewStyle } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
 import { colors } from "../constants/colors";
 import { radius } from "../constants/radius";
 import { spacing } from "../constants/spacing";
@@ -7,10 +8,11 @@ type AppButtonProps = {
   label: string;
   onPress?: () => void;
   variant?: "primary" | "secondary" | "ghost";
+  icon?: keyof typeof Ionicons.glyphMap;
   style?: StyleProp<ViewStyle>;
 };
 
-export function AppButton({ label, onPress, variant = "primary", style }: AppButtonProps) {
+export function AppButton({ label, onPress, variant = "primary", icon, style }: AppButtonProps) {
   return (
     <Pressable
       onPress={onPress}
@@ -21,7 +23,16 @@ export function AppButton({ label, onPress, variant = "primary", style }: AppBut
         style
       ]}
     >
-      <Text style={[styles.label, variant !== "primary" && styles.darkLabel]}>{label}</Text>
+      <View style={styles.content}>
+        {icon ? (
+          <Ionicons
+            name={icon}
+            size={18}
+            color={variant === "primary" ? colors.surface : colors.text}
+          />
+        ) : null}
+        <Text style={[styles.label, variant !== "primary" && styles.darkLabel]}>{label}</Text>
+      </View>
     </Pressable>
   );
 }
@@ -53,6 +64,12 @@ const styles = StyleSheet.create({
   pressed: {
     transform: [{ scale: 0.98 }],
     opacity: 0.9
+  },
+  content: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.sm
   },
   label: {
     color: colors.surface,

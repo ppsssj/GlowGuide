@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { router } from "expo-router";
 import { colors } from "../constants/colors";
@@ -16,11 +17,11 @@ export function Header({ title, subtitle, showBack, rightLabel }: HeaderProps) {
       <View style={styles.side}>
         {showBack ? (
           <Pressable onPress={() => router.back()} style={styles.iconButton}>
-            <Text style={styles.icon}>‹</Text>
+            <Ionicons name="chevron-back" size={22} color={colors.ink} />
           </Pressable>
         ) : (
           <View style={styles.logo}>
-            <Text style={styles.logoText}>G</Text>
+            <Ionicons name="sparkles" size={16} color={colors.surface} />
           </View>
         )}
       </View>
@@ -29,7 +30,13 @@ export function Header({ title, subtitle, showBack, rightLabel }: HeaderProps) {
         {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
       </View>
       <View style={styles.side}>
-        {rightLabel ? <Text style={styles.rightLabel}>{rightLabel}</Text> : <Text style={styles.icon}>⋯</Text>}
+        {rightLabel ? (
+          <View style={styles.iconButton}>
+            <Ionicons name="notifications-outline" size={20} color={colors.text} />
+          </View>
+        ) : (
+          <Ionicons name="ellipsis-horizontal" size={24} color={colors.text} />
+        )}
       </View>
     </View>
   );
@@ -72,10 +79,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  logoText: {
-    color: colors.surface,
-    fontWeight: "900"
-  },
   iconButton: {
     width: 40,
     height: 40,
@@ -83,11 +86,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     alignItems: "center",
     justifyContent: "center"
-  },
-  icon: {
-    color: colors.text,
-    fontSize: 28,
-    fontWeight: "700"
   },
   rightLabel: {
     color: colors.primary,
