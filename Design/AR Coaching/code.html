@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -30,110 +37,126 @@
             },
         }
     </script>
-<style>
+    <style>
         .glass-sheet {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-top: 1px solid rgba(255, 255, 255, 0.3);
         }
+
         .ar-overlay {
             background: radial-gradient(ellipse at center, rgba(255, 218, 185, 0.45) 0%, rgba(255, 218, 185, 0) 70%);
             filter: blur(8px);
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden">
-<div class="relative h-screen w-full flex flex-col">
-<!-- Camera View Background -->
-<div class="absolute inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center" data-alt="Close up of a person's face for makeup application" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJrRjv75gap3z2sS03yedcwT1UL10Bz27vBS_s1A6nr9f2whYTqI3RiAB4RjpPeI-dq5XTB139dGHYauZfuHmF8Oow71cLNpLHvmcy2Tr1Sdo75FMM_MqJJX6pXEAvYl6BMR4KOuejRYcZUJJAvJdAZ2LwhnfAxf3GbexXNvFrL2FA5xX9Ypx_BEqBdds2J_TB1J9lXFCwqAI8qslGDN9WgaVTPmWidlyVdABE2G0e1DnKdBfhEobRJmXxBDRsNb5hRnk5F5Du7oQ')">
-<!-- AR Overlays -->
-<div class="absolute top-[35%] left-[15%] w-[30%] h-[15%] ar-overlay rounded-full"></div>
-<div class="absolute top-[35%] right-[15%] w-[30%] h-[15%] ar-overlay rounded-full opacity-50"></div>
-</div>
-</div>
-<!-- Top UI Header -->
-<div class="relative z-10 p-4 space-y-4">
-<div class="flex items-center justify-between bg-white/60 dark:bg-background-dark/60 backdrop-blur-md rounded-full p-2 px-4 shadow-sm border border-white/20">
-<button class="flex items-center justify-center size-10 rounded-full hover:bg-white/40 transition-colors">
-<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">close</span>
-</button>
-<div class="flex flex-col items-center">
-<h2 class="text-sm font-bold tracking-tight">Sun-Kissed Glow</h2>
-<p class="text-[10px] uppercase font-bold text-primary tracking-widest">Step 3 of 8</p>
-</div>
-<div class="size-10 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">more_horiz</span>
-</div>
-</div>
-<div class="px-2">
-<div class="w-full bg-white/30 dark:bg-background-dark/30 h-1.5 rounded-full overflow-hidden backdrop-blur-sm">
-<div class="bg-primary h-full w-[37.5%] rounded-full shadow-[0_0_8px_rgba(230,25,93,0.5)]"></div>
-</div>
-</div>
-</div>
-<!-- Status Indicator -->
-<div class="relative z-10 flex justify-end px-4 mt-2">
-<div class="bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-white/20">
-<div class="size-2 bg-green-500 rounded-full animate-pulse"></div>
-<span class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Tracking stable</span>
-</div>
-</div>
-<!-- Floating Feedback Toast -->
-<div class="absolute bottom-[36%] left-0 right-0 z-20 flex justify-center px-6">
-<div class="bg-primary text-white px-5 py-3 rounded-full shadow-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-lg">info</span>
-<p class="text-sm font-medium">Move slightly upward to the cheekbone</p>
-</div>
-</div>
-<!-- Bottom Sheet (Glassmorphism) -->
-<div class="mt-auto relative z-10 w-full glass-sheet rounded-t-xl p-6 shadow-2xl">
-<div class="w-12 h-1 bg-slate-400/30 rounded-full mx-auto mb-6"></div>
-<div class="flex justify-between items-start mb-4">
-<div class="space-y-1">
-<p class="text-xs font-bold text-primary uppercase tracking-wider">Step 3: Blush – Left Cheek</p>
-<div class="flex items-center gap-2">
-<span class="px-2.5 py-1 bg-primary text-white text-[10px] font-bold rounded-full">NARS Orgasm - Peach Pink</span>
-</div>
-</div>
-<div class="relative flex items-center justify-center size-12">
-<svg class="size-12 transform -rotate-90">
-<circle class="text-slate-200 dark:text-slate-700" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="3"></circle>
-<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="75.36" stroke-width="3"></circle>
-</svg>
-<span class="absolute text-[10px] font-bold">40%</span>
-</div>
-</div>
-<p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-8">
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden">
+    <div class="relative h-screen w-full flex flex-col">
+        <!-- Camera View Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center" data-alt="Close up of a person's face for makeup application"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJrRjv75gap3z2sS03yedcwT1UL10Bz27vBS_s1A6nr9f2whYTqI3RiAB4RjpPeI-dq5XTB139dGHYauZfuHmF8Oow71cLNpLHvmcy2Tr1Sdo75FMM_MqJJX6pXEAvYl6BMR4KOuejRYcZUJJAvJdAZ2LwhnfAxf3GbexXNvFrL2FA5xX9Ypx_BEqBdds2J_TB1J9lXFCwqAI8qslGDN9WgaVTPmWidlyVdABE2G0e1DnKdBfhEobRJmXxBDRsNb5hRnk5F5Du7oQ')">
+                <!-- AR Overlays -->
+                <div class="absolute top-[35%] left-[15%] w-[30%] h-[15%] ar-overlay rounded-full"></div>
+                <div class="absolute top-[35%] right-[15%] w-[30%] h-[15%] ar-overlay rounded-full opacity-50"></div>
+            </div>
+        </div>
+        <!-- Top UI Header -->
+        <div class="relative z-10 p-4 space-y-4">
+            <div
+                class="flex items-center justify-between bg-white/60 dark:bg-background-dark/60 backdrop-blur-md rounded-full p-2 px-4 shadow-sm border border-white/20">
+                <button
+                    class="flex items-center justify-center size-10 rounded-full hover:bg-white/40 transition-colors">
+                    <span class="material-symbols-outlined text-slate-900 dark:text-slate-100">close</span>
+                </button>
+                <div class="flex flex-col items-center">
+                    <h2 class="text-sm font-bold tracking-tight">Sun-Kissed Glow</h2>
+                    <p class="text-[10px] uppercase font-bold text-primary tracking-widest">Step 3 of 8</p>
+                </div>
+                <div class="size-10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-slate-900 dark:text-slate-100">more_horiz</span>
+                </div>
+            </div>
+            <div class="px-2">
+                <div
+                    class="w-full bg-white/30 dark:bg-background-dark/30 h-1.5 rounded-full overflow-hidden backdrop-blur-sm">
+                    <div class="bg-primary h-full w-[37.5%] rounded-full shadow-[0_0_8px_rgba(230,25,93,0.5)]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Status Indicator -->
+        <div class="relative z-10 flex justify-end px-4 mt-2">
+            <div
+                class="bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-white/20">
+                <div class="size-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Tracking stable</span>
+            </div>
+        </div>
+        <!-- Floating Feedback Toast -->
+        <div class="absolute bottom-[36%] left-0 right-0 z-20 flex justify-center px-6">
+            <div class="bg-primary text-white px-5 py-3 rounded-full shadow-lg flex items-center gap-3">
+                <span class="material-symbols-outlined text-lg">info</span>
+                <p class="text-sm font-medium">Move slightly upward to the cheekbone</p>
+            </div>
+        </div>
+        <!-- Bottom Sheet (Glassmorphism) -->
+        <div class="mt-auto relative z-10 w-full glass-sheet rounded-t-xl p-6 shadow-2xl">
+            <div class="w-12 h-1 bg-slate-400/30 rounded-full mx-auto mb-6"></div>
+            <div class="flex justify-between items-start mb-4">
+                <div class="space-y-1">
+                    <p class="text-xs font-bold text-primary uppercase tracking-wider">Step 3: Blush – Left Cheek</p>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-primary text-white text-[10px] font-bold rounded-full">NARS Orgasm -
+                            Peach Pink</span>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center size-12">
+                    <svg class="size-12 transform -rotate-90">
+                        <circle class="text-slate-200 dark:text-slate-700" cx="24" cy="24" fill="transparent" r="20"
+                            stroke="currentColor" stroke-width="3"></circle>
+                        <circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor"
+                            stroke-dasharray="125.6" stroke-dashoffset="75.36" stroke-width="3"></circle>
+                    </svg>
+                    <span class="absolute text-[10px] font-bold">40%</span>
+                </div>
+            </div>
+            <p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-8">
                 Apply in an upward sweeping motion along the cheekbone for a lifted effect.
             </p>
-<div class="flex items-center gap-3 w-full">
-<button class="flex-1 py-4 px-6 rounded-full border border-slate-300 dark:border-slate-600 font-bold text-sm hover:bg-white/50 transition-colors">
+            <div class="flex items-center gap-3 w-full">
+                <button
+                    class="flex-1 py-4 px-6 rounded-full border border-slate-300 dark:border-slate-600 font-bold text-sm hover:bg-white/50 transition-colors">
                     Skip
                 </button>
-<button class="flex-[2] py-4 px-6 rounded-full bg-primary/40 text-white/70 font-bold text-sm cursor-not-allowed flex items-center justify-center gap-2">
+                <button
+                    class="flex-[2] py-4 px-6 rounded-full bg-primary/40 text-white/70 font-bold text-sm cursor-not-allowed flex items-center justify-center gap-2">
                     Next Step
                     <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-<!-- AR Navigation Overlay buttons (inspired by example) -->
-<div class="absolute right-4 bottom-[38%] z-10 flex flex-col gap-2">
-<button class="flex size-10 items-center justify-center rounded-full bg-white shadow-lg text-slate-800">
-<span class="material-symbols-outlined">add</span>
-</button>
-<button class="flex size-10 items-center justify-center rounded-full bg-white shadow-lg text-slate-800">
-<span class="material-symbols-outlined">remove</span>
-</button>
-<button class="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 mt-2">
-<span class="material-symbols-outlined">center_focus_strong</span>
-</button>
-</div>
-</div>
-</body></html>
+                </button>
+            </div>
+        </div>
+        <!-- AR Navigation Overlay buttons (inspired by example) -->
+        <div class="absolute right-4 bottom-[38%] z-10 flex flex-col gap-2">
+            <button class="flex size-10 items-center justify-center rounded-full bg-white shadow-lg text-slate-800">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+            <button class="flex size-10 items-center justify-center rounded-full bg-white shadow-lg text-slate-800">
+                <span class="material-symbols-outlined">remove</span>
+            </button>
+            <button
+                class="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 mt-2">
+                <span class="material-symbols-outlined">center_focus_strong</span>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

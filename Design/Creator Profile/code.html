@@ -1,286 +1,341 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
         body {
             font-family: 'Inter', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
+
         .glass-panel {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 0.5px solid rgba(255, 255, 255, 0.5);
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+
         .active-tab-indicator {
             view-transition-name: active-tab;
         }
     </style>
-<script id="tailwind-config">
+    <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "on-error-container": "#93000a",
-                "error": "#ba1a1a",
-                "on-background": "#1b1c1d",
-                "on-error": "#ffffff",
-                "outline": "#8f6f73",
-                "background": "#fbf9fa",
-                "on-tertiary-fixed-variant": "#454748",
-                "surface-variant": "#e3e2e3",
-                "on-primary": "#ffffff",
-                "on-surface": "#1b1c1d",
-                "on-surface-variant": "#5b3f43",
-                "surface-container-high": "#e9e8e9",
-                "on-primary-fixed-variant": "#900038",
-                "primary-fixed-dim": "#ffb2be",
-                "inverse-on-surface": "#f2f0f1",
-                "surface-container-lowest": "#ffffff",
-                "on-secondary-container": "#636263",
-                "surface": "#fbf9fa",
-                "tertiary-fixed": "#e1e3e4",
-                "on-primary-fixed": "#400014",
-                "tertiary-fixed-dim": "#c5c7c8",
-                "tertiary-container": "#737576",
-                "primary-container": "#e2165f",
-                "secondary-fixed": "#e5e2e3",
-                "surface-container-low": "#f5f3f4",
-                "on-tertiary-fixed": "#191c1d",
-                "surface-dim": "#dbdada",
-                "secondary": "#5f5e5f",
-                "surface-container-highest": "#e3e2e3",
-                "primary": "#b80049",
-                "inverse-surface": "#303031",
-                "surface-container": "#efedee",
-                "on-secondary-fixed": "#1b1b1c",
-                "inverse-primary": "#ffb2be",
-                "outline-variant": "#e4bdc2",
-                "on-tertiary": "#ffffff",
-                "secondary-fixed-dim": "#c8c6c7",
-                "on-secondary-fixed-variant": "#474647",
-                "surface-tint": "#bc004b",
-                "tertiary": "#5a5c5d",
-                "on-tertiary-container": "#fcfdfe",
-                "on-secondary": "#ffffff",
-                "primary-fixed": "#ffd9de",
-                "on-primary-container": "#fffbff",
-                "secondary-container": "#e2dfe0",
-                "surface-bright": "#fbf9fa",
-                "error-container": "#ffdad6"
-              },
-              "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-              },
-              "spacing": {
-                "stack-sm": "12px",
-                "stack-lg": "48px",
-                "base": "8px",
-                "gutter": "16px",
-                "container-margin": "24px",
-                "stack-md": "24px"
-              },
-              "fontFamily": {
-                "headline-lg-mobile": ["Inter"],
-                "headline-lg": ["Inter"],
-                "body-md": ["Inter"],
-                "display-lg": ["Inter"],
-                "label-lg": ["Inter"],
-                "body-lg": ["Inter"],
-                "label-sm": ["Inter"],
-                "headline-md": ["Inter"]
-              },
-              "fontSize": {
-                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
-                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
-                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c1d",
+                        "on-error": "#ffffff",
+                        "outline": "#8f6f73",
+                        "background": "#fbf9fa",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "surface-variant": "#e3e2e3",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1d",
+                        "on-surface-variant": "#5b3f43",
+                        "surface-container-high": "#e9e8e9",
+                        "on-primary-fixed-variant": "#900038",
+                        "primary-fixed-dim": "#ffb2be",
+                        "inverse-on-surface": "#f2f0f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#636263",
+                        "surface": "#fbf9fa",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-primary-fixed": "#400014",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#737576",
+                        "primary-container": "#e2165f",
+                        "secondary-fixed": "#e5e2e3",
+                        "surface-container-low": "#f5f3f4",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-dim": "#dbdada",
+                        "secondary": "#5f5e5f",
+                        "surface-container-highest": "#e3e2e3",
+                        "primary": "#b80049",
+                        "inverse-surface": "#303031",
+                        "surface-container": "#efedee",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "inverse-primary": "#ffb2be",
+                        "outline-variant": "#e4bdc2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c7",
+                        "on-secondary-fixed-variant": "#474647",
+                        "surface-tint": "#bc004b",
+                        "tertiary": "#5a5c5d",
+                        "on-tertiary-container": "#fcfdfe",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffd9de",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#e2dfe0",
+                        "surface-bright": "#fbf9fa",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
             }
-          }
         }
     </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="bg-background text-on-background min-h-screen">
-<!-- Top App Bar (Shared Component Logic) -->
-<header class="bg-surface/85 backdrop-blur-xl text-primary font-headline-md text-headline-md text-on-surface docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm flex items-center justify-between px-container-margin w-full h-16">
-<div class="flex items-center gap-4">
-<button class="active:scale-95 duration-200 hover:opacity-70 transition-opacity">
-<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
-</button>
-<h1 class="font-bold text-on-surface">Mina Rose</h1>
-</div>
-<div class="flex items-center gap-2">
-<button class="active:scale-95 duration-200 hover:opacity-70 transition-opacity">
-<span class="material-symbols-outlined text-on-surface" data-icon="more_vert">more_vert</span>
-</button>
-</div>
-</header>
-<main class="pb-32">
-<!-- Profile Header Section -->
-<section class="px-container-margin pt-stack-md flex flex-col items-center text-center">
-<div class="relative group">
-<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-primary/10">
-<img alt="Mina Rose" class="w-full h-full object-cover" data-alt="A professional headshot of Mina Rose, a makeup artist with glowing, perfectly applied makeup, smiling warmly. The lighting is soft and flattering, reminiscent of a high-end beauty studio. She has dark hair styled in soft waves and is wearing a chic, minimalist cream-colored outfit against a soft neutral background that emphasizes her expertise and approachable luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdQXJS6wZjC37f2G5OkOEL2AZGlQCGpWJPazq5ejR0m6ryWctw26J7CfD9sKNu6GwwBbI1Hotk-JOrviSpDaE5nyAWpRRfs_NgxvwIefqqXI6WIU_3w1v3Nz23W5hPQs0VM-XIkXqHqwGv2K1rg9e0xbTt8OTXLdxvKohGCcWjIgpq83GbSMB6MoWg_2mtgFGIo3Jxw82s7ezej9q8lFpmBmP3f-9dFxu4A9L6oF7zXYF5WBoCiTJpwufvGd8c-LHV6H7G9iFvXh4"/>
-</div>
-<div class="absolute bottom-6 right-2 bg-primary rounded-full p-1 border-2 border-white">
-<span class="material-symbols-outlined text-white text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-</div>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Mina Rose</h2>
-<p class="font-label-lg text-label-lg text-secondary mb-4">Senior MUA • Los Angeles</p>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed mb-6">
-                Creating effortless looks for everyday glow. 🌿 Creator of the 'Radiant Rose' series. Join my AR coaching sessions below!
+    <!-- Top App Bar (Shared Component Logic) -->
+    <header
+        class="bg-surface/85 backdrop-blur-xl text-primary font-headline-md text-headline-md text-on-surface docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm flex items-center justify-between px-container-margin w-full h-16">
+        <div class="flex items-center gap-4">
+            <button class="active:scale-95 duration-200 hover:opacity-70 transition-opacity">
+                <span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+            </button>
+            <h1 class="font-bold text-on-surface">Mina Rose</h1>
+        </div>
+        <div class="flex items-center gap-2">
+            <button class="active:scale-95 duration-200 hover:opacity-70 transition-opacity">
+                <span class="material-symbols-outlined text-on-surface" data-icon="more_vert">more_vert</span>
+            </button>
+        </div>
+    </header>
+    <main class="pb-32">
+        <!-- Profile Header Section -->
+        <section class="px-container-margin pt-stack-md flex flex-col items-center text-center">
+            <div class="relative group">
+                <div
+                    class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-primary/10">
+                    <img alt="Mina Rose" class="w-full h-full object-cover"
+                        data-alt="A professional headshot of Mina Rose, a makeup artist with glowing, perfectly applied makeup, smiling warmly. The lighting is soft and flattering, reminiscent of a high-end beauty studio. She has dark hair styled in soft waves and is wearing a chic, minimalist cream-colored outfit against a soft neutral background that emphasizes her expertise and approachable luxury."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdQXJS6wZjC37f2G5OkOEL2AZGlQCGpWJPazq5ejR0m6ryWctw26J7CfD9sKNu6GwwBbI1Hotk-JOrviSpDaE5nyAWpRRfs_NgxvwIefqqXI6WIU_3w1v3Nz23W5hPQs0VM-XIkXqHqwGv2K1rg9e0xbTt8OTXLdxvKohGCcWjIgpq83GbSMB6MoWg_2mtgFGIo3Jxw82s7ezej9q8lFpmBmP3f-9dFxu4A9L6oF7zXYF5WBoCiTJpwufvGd8c-LHV6H7G9iFvXh4" />
+                </div>
+                <div class="absolute bottom-6 right-2 bg-primary rounded-full p-1 border-2 border-white">
+                    <span class="material-symbols-outlined text-white text-[16px]" data-icon="verified"
+                        style="font-variation-settings: 'FILL' 1;">verified</span>
+                </div>
+            </div>
+            <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Mina Rose</h2>
+            <p class="font-label-lg text-label-lg text-secondary mb-4">Senior MUA • Los Angeles</p>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed mb-6">
+                Creating effortless looks for everyday glow. 🌿 Creator of the 'Radiant Rose' series. Join my AR
+                coaching sessions below!
             </p>
-<!-- Stats Row -->
-<div class="flex justify-center gap-8 w-full py-4 border-y border-outline-variant/20 mb-6">
-<div class="text-center">
-<span class="block font-bold text-headline-md text-on-surface">1.2M</span>
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Followers</span>
-</div>
-<div class="text-center">
-<span class="block font-bold text-headline-md text-on-surface">850</span>
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Following</span>
-</div>
-<div class="text-center">
-<span class="block font-bold text-headline-md text-on-surface">15M</span>
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Likes</span>
-</div>
-</div>
-<!-- Action Buttons -->
-<div class="flex gap-4 w-full px-2">
-<button class="flex-1 bg-primary-container text-on-primary-container h-12 rounded-xl font-bold active:scale-95 transition-transform shadow-md hover:brightness-110">
+            <!-- Stats Row -->
+            <div class="flex justify-center gap-8 w-full py-4 border-y border-outline-variant/20 mb-6">
+                <div class="text-center">
+                    <span class="block font-bold text-headline-md text-on-surface">1.2M</span>
+                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Followers</span>
+                </div>
+                <div class="text-center">
+                    <span class="block font-bold text-headline-md text-on-surface">850</span>
+                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Following</span>
+                </div>
+                <div class="text-center">
+                    <span class="block font-bold text-headline-md text-on-surface">15M</span>
+                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Likes</span>
+                </div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex gap-4 w-full px-2">
+                <button
+                    class="flex-1 bg-primary-container text-on-primary-container h-12 rounded-xl font-bold active:scale-95 transition-transform shadow-md hover:brightness-110">
                     Follow
                 </button>
-<button class="flex-1 border-2 border-outline-variant text-on-surface h-12 rounded-xl font-semibold active:scale-95 transition-transform hover:bg-surface-variant/30">
+                <button
+                    class="flex-1 border-2 border-outline-variant text-on-surface h-12 rounded-xl font-semibold active:scale-95 transition-transform hover:bg-surface-variant/30">
                     Message
                 </button>
-</div>
-</section>
-<!-- Content Tabs -->
-<section class="mt-8">
-<div class="flex border-b border-outline-variant/20 px-container-margin overflow-x-auto scrollbar-hide">
-<button class="px-6 py-4 font-label-lg text-label-lg text-primary border-b-2 border-primary transition-all relative" onclick="switchTab(this)">
+            </div>
+        </section>
+        <!-- Content Tabs -->
+        <section class="mt-8">
+            <div class="flex border-b border-outline-variant/20 px-container-margin overflow-x-auto scrollbar-hide">
+                <button
+                    class="px-6 py-4 font-label-lg text-label-lg text-primary border-b-2 border-primary transition-all relative"
+                    onclick="switchTab(this)">
                     Looks
                     <div class="active-tab-indicator"></div>
-</button>
-<button class="px-6 py-4 font-label-lg text-label-lg text-secondary opacity-60 hover:opacity-100 transition-all" onclick="switchTab(this)">
+                </button>
+                <button
+                    class="px-6 py-4 font-label-lg text-label-lg text-secondary opacity-60 hover:opacity-100 transition-all"
+                    onclick="switchTab(this)">
                     Recipes
                 </button>
-<button class="px-6 py-4 font-label-lg text-label-lg text-secondary opacity-60 hover:opacity-100 transition-all" onclick="switchTab(this)">
+                <button
+                    class="px-6 py-4 font-label-lg text-label-lg text-secondary opacity-60 hover:opacity-100 transition-all"
+                    onclick="switchTab(this)">
                     Series
                 </button>
-</div>
-<!-- Featured Recipe Card -->
-<div class="px-container-margin mt-6">
-<div class="relative w-full h-64 rounded-2xl overflow-hidden shadow-xl group">
-<img alt="Golden Hour Masterclass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, high-fashion beauty shot of a model during the golden hour, featuring shimmering gold and bronze makeup. The warm sunset light creates long shadows and a magical, glowing atmosphere. The background is a soft, out-of-focus garden at dusk. The overall aesthetic is one of extreme luxury, precision, and the artistic expertise of a master makeup artist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTh-tYfpIqQ7xncy2aM-UPfZcoujC-IOziQD45dUqhnAr9YuthDsq6M8JJzZUBL-yYkYRay5_FNGmMjZE0tiLO3bYrF6QLOwx-vQxUC8ba4UJKoY6xjecqoI6fEpXPFSqcinq6OSF7V5PEOfWJiNelOrUKGjtw7QuRQo49FbL2zpQBh58yWK_b3XkP3WuTg511F8nCxiO7OyRqEKZww2oi0kpvtNn6V7pEMhFz-iUw5F2cBM5hvBdS_wMoAwaOzjdVXk2eFpiTryY"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6 w-full flex justify-between items-end">
-<div>
-<span class="bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter mb-2 inline-block">Featured Masterclass</span>
-<h3 class="text-white font-headline-md text-headline-md font-bold">Golden Hour Masterclass</h3>
-</div>
-<button class="glass-panel text-on-surface font-bold px-4 py-2 rounded-xl text-label-lg flex items-center gap-2 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" data-icon="view_in_ar">view_in_ar</span>
+            </div>
+            <!-- Featured Recipe Card -->
+            <div class="px-container-margin mt-6">
+                <div class="relative w-full h-64 rounded-2xl overflow-hidden shadow-xl group">
+                    <img alt="Golden Hour Masterclass"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="A cinematic, high-fashion beauty shot of a model during the golden hour, featuring shimmering gold and bronze makeup. The warm sunset light creates long shadows and a magical, glowing atmosphere. The background is a soft, out-of-focus garden at dusk. The overall aesthetic is one of extreme luxury, precision, and the artistic expertise of a master makeup artist."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTh-tYfpIqQ7xncy2aM-UPfZcoujC-IOziQD45dUqhnAr9YuthDsq6M8JJzZUBL-yYkYRay5_FNGmMjZE0tiLO3bYrF6QLOwx-vQxUC8ba4UJKoY6xjecqoI6fEpXPFSqcinq6OSF7V5PEOfWJiNelOrUKGjtw7QuRQo49FbL2zpQBh58yWK_b3XkP3WuTg511F8nCxiO7OyRqEKZww2oi0kpvtNn6V7pEMhFz-iUw5F2cBM5hvBdS_wMoAwaOzjdVXk2eFpiTryY" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full flex justify-between items-end">
+                        <div>
+                            <span
+                                class="bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter mb-2 inline-block">Featured
+                                Masterclass</span>
+                            <h3 class="text-white font-headline-md text-headline-md font-bold">Golden Hour Masterclass
+                            </h3>
+                        </div>
+                        <button
+                            class="glass-panel text-on-surface font-bold px-4 py-2 rounded-xl text-label-lg flex items-center gap-2 active:scale-95 transition-transform">
+                            <span class="material-symbols-outlined" data-icon="view_in_ar">view_in_ar</span>
                             Try in AR
                         </button>
-</div>
-</div>
-</div>
-<!-- Looks Grid -->
-<div class="px-container-margin mt-gutter grid grid-cols-2 gap-4">
-<!-- Look 1 -->
-<div class="flex flex-col gap-2">
-<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
-<img alt="Sunkissed Glow" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up portrait of a soft, sunkissed makeup look featuring peach tones and natural dewy skin. The lighting is bright and airy, with a high-key professional studio feel. The model has a radiant, effortless glow, emphasizing the 'clean girl' aesthetic that is iconic to Mina Rose's professional portfolio. Subtle pink and peach hues dominate the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCExRlY8FVW7N3JqBroYhzg_9UhFAANRjoz29Q8eOZWOqNrqtdJptM-FaNdYsgEOxbnI2Q8LoryvSrYT-fhPpcL7cg3hcCiohTJqBhNpQbDk576RqBjUEmepQXElvZc9vzvEl9LhDMoG9oVMh-BEDUQhWlCGG2lZSvAhyI0g4At-Il-VS_wTq_JJJDBaQ5g4GVnTp_Vx9bjVpFghMHFthktJkEBTXNMma_7mtA7ugbei9nQ0llNG0KiXFKDsX2Gt9ymtScgumj30zg"/>
-<div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="view_in_ar">view_in_ar</span>
-</div>
-</div>
-<h4 class="font-label-lg text-label-lg text-on-surface px-1">Sunkissed Glow</h4>
-</div>
-<!-- Look 2 -->
-<div class="flex flex-col gap-2">
-<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
-<img alt="Midnight Glam" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A dramatic, high-contrast midnight glam makeup look featuring deep smokey eyes and bold defined lips. The lighting is moody with cool blue and deep violet undertones, creating a sophisticated and edgy aesthetic. Silver highlights shimmer on the model's cheekbones, showcasing professional-grade precision and a glamorous evening-ready appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEplGeiGl6u3RlzebKzxVsBgNe_X1tKjWMPDq0AKqaqoaDVY589uJSDtYqYhfY-DmTPdMKH32iPU9gL11TOK0wqU53qoJ6RlLvovPgrcn1bY_hvqxpsHpcgIZUANPRNh199LKnOsHY1lKspAdsjYZQpLfVxtT8tZjkkDOSpWpGZRI_X0xxcHWGULA1PRaIEy0lVaGuebx25LvdYqh3JPsNAXw53MeiYCxpWa7aWTvqlB0RptCbZDQZBBgwQlf1l-nXb69EMqIEJg"/>
-<div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="view_in_ar">view_in_ar</span>
-</div>
-</div>
-<h4 class="font-label-lg text-label-lg text-on-surface px-1">Midnight Glam</h4>
-</div>
-<!-- Look 3 -->
-<div class="flex flex-col gap-2">
-<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
-<img alt="Peach Velvet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A soft and velvety peach-themed makeup look on a model with flawless, matte-finish skin. The background is a soft beige, and the lighting is diffused to highlight the subtle blending of the eyeshadow and blush. The mood is calm and elegant, embodying the high-tech yet approachable luxury of the beauty design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8YewIt7FzpddwrKDd_mJiBXte8rpZLWkzXUxQdBtTz0eTBQdZSS0wDUYSdoizeHABu71D-k8SS6morwUZnYXhIIl3jdF-aj00fwsVFRwegtiNNdRWRzkICWt5sJ7z476SePKzUb27HhCguHTQLce_Do-moS-5vVwgQRDsK69a_c2jlkG6hdRz2gk3u4bViRSKc17fdfbDRrrHtINZ4WR1ZOFTRua4NDEDWigu4F6nPiY_GUMXiDIAT-fZblnNLv-MfbdHoHk4ETs"/>
-<div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="view_in_ar">view_in_ar</span>
-</div>
-</div>
-<h4 class="font-label-lg text-label-lg text-on-surface px-1">Peach Velvet</h4>
-</div>
-<!-- Look 4 -->
-<div class="flex flex-col gap-2">
-<div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
-<img alt="Rose Petal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-fashion editorial makeup look featuring bold pops of magenta and vibrant pink, echoing the primary brand colors. The lighting is sharp and professional, highlighting the texture of the makeup. The overall style is modern and experimental, showcasing the versatility of the artist's skills in a clean, minimalist digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFL22is6K5OpQr7nu1vX_mRI6_USrIfKeh3xBAYKA1ox3M8QeQEO9aoKYbeT5TlfvL_bq8nkIfIUIHwYa6oMZN_h4fCh3ApXRaxZzZEeinK14WEX2Fsb69KBmEpVDKy8BUzq9R6RBpDl4qDQwofdtGM9XOBhTC_KAMZyYqUCVAd2xySloOtD-axwXQUZQKQhESlyH0YTo-HzVZgJOokTSc4fUxFvVnjNePeNGxpB3jvfL53MjgnvOHlBFQY5eE3gOccKfabXcoZf8"/>
-<div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="view_in_ar">view_in_ar</span>
-</div>
-</div>
-<h4 class="font-label-lg text-label-lg text-on-surface px-1">Rose Petal</h4>
-</div>
-</div>
-</section>
-</main>
-<!-- Bottom Nav Bar (Shared Component Logic) -->
-<nav class="bg-surface/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center px-4 pb-6 pt-3 h-20">
-<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
-<span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
-<span class="font-label-sm text-label-sm">Explore</span>
-</div>
-<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
-<span class="material-symbols-outlined text-[24px]" data-icon="bookmark">bookmark</span>
-<span class="font-label-sm text-label-sm">Saved</span>
-</div>
-<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
-<span class="material-symbols-outlined text-[32px] text-primary" data-icon="add_circle">add_circle</span>
-<span class="font-label-sm text-label-sm">Create</span>
-</div>
-<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
-<span class="material-symbols-outlined text-[24px]" data-icon="shopping_bag">shopping_bag</span>
-<span class="font-label-sm text-label-sm">Shop</span>
-</div>
-<!-- Profile Tab is Active -->
-<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 duration-150 cursor-pointer">
-<span class="material-symbols-outlined text-[24px]" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
-<span class="font-label-sm text-label-sm">Profile</span>
-</div>
-</nav>
-<script>
+                    </div>
+                </div>
+            </div>
+            <!-- Looks Grid -->
+            <div class="px-container-margin mt-gutter grid grid-cols-2 gap-4">
+                <!-- Look 1 -->
+                <div class="flex flex-col gap-2">
+                    <div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
+                        <img alt="Sunkissed Glow"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="A close-up portrait of a soft, sunkissed makeup look featuring peach tones and natural dewy skin. The lighting is bright and airy, with a high-key professional studio feel. The model has a radiant, effortless glow, emphasizing the 'clean girl' aesthetic that is iconic to Mina Rose's professional portfolio. Subtle pink and peach hues dominate the palette."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCExRlY8FVW7N3JqBroYhzg_9UhFAANRjoz29Q8eOZWOqNrqtdJptM-FaNdYsgEOxbnI2Q8LoryvSrYT-fhPpcL7cg3hcCiohTJqBhNpQbDk576RqBjUEmepQXElvZc9vzvEl9LhDMoG9oVMh-BEDUQhWlCGG2lZSvAhyI0g4At-Il-VS_wTq_JJJDBaQ5g4GVnTp_Vx9bjVpFghMHFthktJkEBTXNMma_7mtA7ugbei9nQ0llNG0KiXFKDsX2Gt9ymtScgumj30zg" />
+                        <div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[18px] text-primary"
+                                data-icon="view_in_ar">view_in_ar</span>
+                        </div>
+                    </div>
+                    <h4 class="font-label-lg text-label-lg text-on-surface px-1">Sunkissed Glow</h4>
+                </div>
+                <!-- Look 2 -->
+                <div class="flex flex-col gap-2">
+                    <div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
+                        <img alt="Midnight Glam"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="A dramatic, high-contrast midnight glam makeup look featuring deep smokey eyes and bold defined lips. The lighting is moody with cool blue and deep violet undertones, creating a sophisticated and edgy aesthetic. Silver highlights shimmer on the model's cheekbones, showcasing professional-grade precision and a glamorous evening-ready appearance."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEplGeiGl6u3RlzebKzxVsBgNe_X1tKjWMPDq0AKqaqoaDVY589uJSDtYqYhfY-DmTPdMKH32iPU9gL11TOK0wqU53qoJ6RlLvovPgrcn1bY_hvqxpsHpcgIZUANPRNh199LKnOsHY1lKspAdsjYZQpLfVxtT8tZjkkDOSpWpGZRI_X0xxcHWGULA1PRaIEy0lVaGuebx25LvdYqh3JPsNAXw53MeiYCxpWa7aWTvqlB0RptCbZDQZBBgwQlf1l-nXb69EMqIEJg" />
+                        <div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[18px] text-primary"
+                                data-icon="view_in_ar">view_in_ar</span>
+                        </div>
+                    </div>
+                    <h4 class="font-label-lg text-label-lg text-on-surface px-1">Midnight Glam</h4>
+                </div>
+                <!-- Look 3 -->
+                <div class="flex flex-col gap-2">
+                    <div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
+                        <img alt="Peach Velvet"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="A soft and velvety peach-themed makeup look on a model with flawless, matte-finish skin. The background is a soft beige, and the lighting is diffused to highlight the subtle blending of the eyeshadow and blush. The mood is calm and elegant, embodying the high-tech yet approachable luxury of the beauty design system."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8YewIt7FzpddwrKDd_mJiBXte8rpZLWkzXUxQdBtTz0eTBQdZSS0wDUYSdoizeHABu71D-k8SS6morwUZnYXhIIl3jdF-aj00fwsVFRwegtiNNdRWRzkICWt5sJ7z476SePKzUb27HhCguHTQLce_Do-moS-5vVwgQRDsK69a_c2jlkG6hdRz2gk3u4bViRSKc17fdfbDRrrHtINZ4WR1ZOFTRua4NDEDWigu4F6nPiY_GUMXiDIAT-fZblnNLv-MfbdHoHk4ETs" />
+                        <div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[18px] text-primary"
+                                data-icon="view_in_ar">view_in_ar</span>
+                        </div>
+                    </div>
+                    <h4 class="font-label-lg text-label-lg text-on-surface px-1">Peach Velvet</h4>
+                </div>
+                <!-- Look 4 -->
+                <div class="flex flex-col gap-2">
+                    <div class="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
+                        <img alt="Rose Petal"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="A high-fashion editorial makeup look featuring bold pops of magenta and vibrant pink, echoing the primary brand colors. The lighting is sharp and professional, highlighting the texture of the makeup. The overall style is modern and experimental, showcasing the versatility of the artist's skills in a clean, minimalist digital environment."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFL22is6K5OpQr7nu1vX_mRI6_USrIfKeh3xBAYKA1ox3M8QeQEO9aoKYbeT5TlfvL_bq8nkIfIUIHwYa6oMZN_h4fCh3ApXRaxZzZEeinK14WEX2Fsb69KBmEpVDKy8BUzq9R6RBpDl4qDQwofdtGM9XOBhTC_KAMZyYqUCVAd2xySloOtD-axwXQUZQKQhESlyH0YTo-HzVZgJOokTSc4fUxFvVnjNePeNGxpB3jvfL53MjgnvOHlBFQY5eE3gOccKfabXcoZf8" />
+                        <div class="absolute top-2 right-2 glass-panel p-1 rounded-lg">
+                            <span class="material-symbols-outlined text-[18px] text-primary"
+                                data-icon="view_in_ar">view_in_ar</span>
+                        </div>
+                    </div>
+                    <h4 class="font-label-lg text-label-lg text-on-surface px-1">Rose Petal</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Nav Bar (Shared Component Logic) -->
+    <nav
+        class="bg-surface/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center px-4 pb-6 pt-3 h-20">
+        <div
+            class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
+            <span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
+            <span class="font-label-sm text-label-sm">Explore</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
+            <span class="material-symbols-outlined text-[24px]" data-icon="bookmark">bookmark</span>
+            <span class="font-label-sm text-label-sm">Saved</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
+            <span class="material-symbols-outlined text-[32px] text-primary" data-icon="add_circle">add_circle</span>
+            <span class="font-label-sm text-label-sm">Create</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim opacity-60 hover:text-primary transition-colors active:scale-90 duration-150 cursor-pointer">
+            <span class="material-symbols-outlined text-[24px]" data-icon="shopping_bag">shopping_bag</span>
+            <span class="font-label-sm text-label-sm">Shop</span>
+        </div>
+        <!-- Profile Tab is Active -->
+        <div
+            class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 duration-150 cursor-pointer">
+            <span class="material-symbols-outlined text-[24px]" data-icon="person"
+                style="font-variation-settings: 'FILL' 1;">person</span>
+            <span class="font-label-sm text-label-sm">Profile</span>
+        </div>
+    </nav>
+    <script>
         function switchTab(el) {
             const tabs = el.parentElement.querySelectorAll('button');
             tabs.forEach(tab => {
@@ -298,7 +353,7 @@
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
                 item.style.transition = `all 0.5s ease-out ${index * 0.1}s`;
-                
+
                 setTimeout(() => {
                     item.style.opacity = '1';
                     item.style.transform = 'translateY(0)';
@@ -306,4 +361,6 @@
             });
         });
     </script>
-</body></html>
+</body>
+
+</html>

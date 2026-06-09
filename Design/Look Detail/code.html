@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Look Detail - AR Makeup Coaching</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Look Detail - AR Makeup Coaching</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -20,173 +26,205 @@
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
-<!-- Main Scrollable Content -->
-<main class="relative pb-32">
-<!-- Header Navigation -->
-<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/50 to-transparent text-white">
-<button class="flex size-10 items-center justify-center rounded-full bg-black/20 backdrop-blur-md">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<div class="flex gap-2">
-<button class="flex size-10 items-center justify-center rounded-full bg-black/20 backdrop-blur-md">
-<span class="material-symbols-outlined">share</span>
-</button>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="relative h-[450px] w-full">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of professional radiant rose makeup look" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiY8Z6osRIyUu_vvlvuN8thIUwn5hY12tvtlE6X-piplpfJSVS1BZCyHWp3iSKUTHR3ngS3jLuvRAl_1JOCmISsc6KqkCJdhGd9Y3TEo1k4W37EUszOO4G7rQcENkOWOYeX06bsK0gcVJF_TnnLrIi66dwOPl-AgRLCr5V-lt-n6msLpbprUbgB0DGHx9MnRhPOnh6tUY_j4IYFyuwRpfztNlkZZxtJ8FyHDubM3bGCU0dMvYl-u6WtlkKzoQS6hcfK2qpma1YHX4')">
-<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent"></div>
-</div>
-<div class="absolute bottom-0 left-0 right-0 p-6 space-y-4">
-<h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">Radiant Rose Look</h1>
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="size-12 rounded-full border-2 border-white dark:border-slate-800 bg-cover bg-center" data-alt="Mina Rose creator profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAc6lS0pUFJ59EA6iaFUZ98RXJL75FOAsnw_r9Kp6rfOkT0LG0tsTMRbO61ZYJU_FrvGywO1nVfRTMJd2pikXqyfWjH18KiQtgtUCBOT5MTSFmiDN7Cs4ocPtrUPsNf1vlQT4AKhGHXj-ueKI_6rADJoFR1I-mArENVlnLPX22ynL12Po164kBajtx-CAnj9DhNOI6o05c4wFRhLQf5HIFAOQPYF7JGTHK4mFkZTHo-JJB8NT5-dpzrb_ftedCkzHLxKzffvvpsq98')"></div>
-<div>
-<p class="font-bold text-slate-900 dark:text-white">Mina Rose</p>
-<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Senior MUA • 1.2M followers</p>
-</div>
-</div>
-<button class="bg-primary text-white px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-95 shadow-lg shadow-primary/20">
+    <!-- Main Scrollable Content -->
+    <main class="relative pb-32">
+        <!-- Header Navigation -->
+        <header
+            class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/50 to-transparent text-white">
+            <button class="flex size-10 items-center justify-center rounded-full bg-black/20 backdrop-blur-md">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <div class="flex gap-2">
+                <button class="flex size-10 items-center justify-center rounded-full bg-black/20 backdrop-blur-md">
+                    <span class="material-symbols-outlined">share</span>
+                </button>
+            </div>
+        </header>
+        <!-- Hero Section -->
+        <section class="relative h-[450px] w-full">
+            <div class="absolute inset-0 bg-cover bg-center"
+                data-alt="Close up of professional radiant rose makeup look"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiY8Z6osRIyUu_vvlvuN8thIUwn5hY12tvtlE6X-piplpfJSVS1BZCyHWp3iSKUTHR3ngS3jLuvRAl_1JOCmISsc6KqkCJdhGd9Y3TEo1k4W37EUszOO4G7rQcENkOWOYeX06bsK0gcVJF_TnnLrIi66dwOPl-AgRLCr5V-lt-n6msLpbprUbgB0DGHx9MnRhPOnh6tUY_j4IYFyuwRpfztNlkZZxtJ8FyHDubM3bGCU0dMvYl-u6WtlkKzoQS6hcfK2qpma1YHX4')">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent">
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 space-y-4">
+                <h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">Radiant Rose
+                    Look</h1>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="size-12 rounded-full border-2 border-white dark:border-slate-800 bg-cover bg-center"
+                            data-alt="Mina Rose creator profile picture"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAc6lS0pUFJ59EA6iaFUZ98RXJL75FOAsnw_r9Kp6rfOkT0LG0tsTMRbO61ZYJU_FrvGywO1nVfRTMJd2pikXqyfWjH18KiQtgtUCBOT5MTSFmiDN7Cs4ocPtrUPsNf1vlQT4AKhGHXj-ueKI_6rADJoFR1I-mArENVlnLPX22ynL12Po164kBajtx-CAnj9DhNOI6o05c4wFRhLQf5HIFAOQPYF7JGTHK4mFkZTHo-JJB8NT5-dpzrb_ftedCkzHLxKzffvvpsq98')">
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 dark:text-white">Mina Rose</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Senior MUA • 1.2M
+                                followers</p>
+                        </div>
+                    </div>
+                    <button
+                        class="bg-primary text-white px-6 py-2 rounded-full font-bold text-sm transition-transform active:scale-95 shadow-lg shadow-primary/20">
                         Follow
                     </button>
-</div>
-</div>
-</section>
-<!-- Stats Row -->
-<section class="px-6 py-4 flex gap-3 overflow-x-auto no-scrollbar">
-<div class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-3 rounded-xl border border-primary/10 min-w-fit shadow-sm">
-<span class="material-symbols-outlined text-primary text-lg">schedule</span>
-<span class="font-bold text-sm">12 mins</span>
-</div>
-<div class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-3 rounded-xl border border-primary/10 min-w-fit shadow-sm">
-<span class="material-symbols-outlined text-primary text-lg">signal_cellular_alt</span>
-<span class="font-bold text-sm">Medium</span>
-</div>
-<div class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-3 rounded-xl border border-primary/10 min-w-fit shadow-sm">
-<span class="material-symbols-outlined text-primary text-lg">format_list_numbered</span>
-<span class="font-bold text-sm">8 Steps</span>
-</div>
-</section>
-<!-- Product Section -->
-<section class="p-6 space-y-4">
-<div class="flex items-end justify-between">
-<h2 class="text-xl font-bold tracking-tight">Product List</h2>
-<a class="text-primary text-sm font-bold flex items-center gap-1" href="#">
+                </div>
+            </div>
+        </section>
+        <!-- Stats Row -->
+        <section class="px-6 py-4 flex gap-3 overflow-x-auto no-scrollbar">
+            <div
+                class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-3 rounded-xl border border-primary/10 min-w-fit shadow-sm">
+                <span class="material-symbols-outlined text-primary text-lg">schedule</span>
+                <span class="font-bold text-sm">12 mins</span>
+            </div>
+            <div
+                class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-3 rounded-xl border border-primary/10 min-w-fit shadow-sm">
+                <span class="material-symbols-outlined text-primary text-lg">signal_cellular_alt</span>
+                <span class="font-bold text-sm">Medium</span>
+            </div>
+            <div
+                class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-3 rounded-xl border border-primary/10 min-w-fit shadow-sm">
+                <span class="material-symbols-outlined text-primary text-lg">format_list_numbered</span>
+                <span class="font-bold text-sm">8 Steps</span>
+            </div>
+        </section>
+        <!-- Product Section -->
+        <section class="p-6 space-y-4">
+            <div class="flex items-end justify-between">
+                <h2 class="text-xl font-bold tracking-tight">Product List</h2>
+                <a class="text-primary text-sm font-bold flex items-center gap-1" href="#">
                     View alternatives <span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-</div>
-<div class="space-y-3">
-<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
-<div class="size-14 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-400">inventory_2</span>
-</div>
-<div class="flex-1">
-<p class="font-bold text-sm">Radiant Blush</p>
-<p class="text-xs text-slate-500 dark:text-slate-400">NARS - Orgasm</p>
-</div>
-<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-<span class="material-symbols-outlined text-sm">shopping_bag</span>
-</button>
-</div>
-<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
-<div class="size-14 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-400">inventory_2</span>
-</div>
-<div class="flex-1">
-<p class="font-bold text-sm">Silk Foundation</p>
-<p class="text-xs text-slate-500 dark:text-slate-400">Armani - Luminous Silk</p>
-</div>
-<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-<span class="material-symbols-outlined text-sm">shopping_bag</span>
-</button>
-</div>
-</div>
-</section>
-<!-- Steps Section (Accordion Style) -->
-<section class="p-6 space-y-4">
-<h2 class="text-xl font-bold tracking-tight">How to Apply</h2>
-<div class="space-y-2">
-<!-- Step 1 (Expanded) -->
-<div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-primary/20 p-4 shadow-sm">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">face</span>
-</div>
-<div>
-<p class="text-xs font-bold text-primary uppercase tracking-widest">Step 1</p>
-<p class="font-bold">Base Prep</p>
-</div>
-</div>
-<span class="material-symbols-outlined text-primary">expand_less</span>
-</div>
-<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
-<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Apply a thin layer of primer across the T-zone and cheeks. Use circular motions to ensure full coverage and a smooth canvas for the foundation.
+                </a>
+            </div>
+            <div class="space-y-3">
+                <div
+                    class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                    <div class="size-14 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-slate-400">inventory_2</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-bold text-sm">Radiant Blush</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">NARS - Orgasm</p>
+                    </div>
+                    <button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                    </button>
+                </div>
+                <div
+                    class="flex items-center gap-4 p-3 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                    <div class="size-14 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-slate-400">inventory_2</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-bold text-sm">Silk Foundation</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Armani - Luminous Silk</p>
+                    </div>
+                    <button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Steps Section (Accordion Style) -->
+        <section class="p-6 space-y-4">
+            <h2 class="text-xl font-bold tracking-tight">How to Apply</h2>
+            <div class="space-y-2">
+                <!-- Step 1 (Expanded) -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border-2 border-primary/20 p-4 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">face</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-primary uppercase tracking-widest">Step 1</p>
+                                <p class="font-bold">Base Prep</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-primary">expand_less</span>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Apply a thin layer of primer across the T-zone and cheeks. Use circular motions to ensure
+                            full coverage and a smooth canvas for the foundation.
                         </p>
-</div>
-</div>
-<!-- Step 2 -->
-<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 p-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3 opacity-70">
-<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400">
-<span class="material-symbols-outlined">brush</span>
-</div>
-<div>
-<p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Step 2</p>
-<p class="font-bold text-slate-600 dark:text-slate-200">Cheekbone Blush</p>
-</div>
-</div>
-<span class="material-symbols-outlined text-slate-400">expand_more</span>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 p-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3 opacity-70">
-<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400">
-<span class="material-symbols-outlined">visibility</span>
-</div>
-<div>
-<p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Step 3</p>
-<p class="font-bold text-slate-600 dark:text-slate-200">Eyelid Shimmer</p>
-</div>
-</div>
-<span class="material-symbols-outlined text-slate-400">expand_more</span>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Fixed Footer CTAs -->
-<footer class="fixed bottom-0 left-0 right-0 p-6 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 z-50">
-<div class="flex gap-4 max-w-4xl mx-auto">
-<button class="flex-1 bg-primary text-white h-14 rounded-full font-bold flex items-center justify-center gap-2 shadow-xl shadow-primary/30 transition-transform active:scale-95">
-<span class="material-symbols-outlined">camera</span>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 p-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3 opacity-70">
+                            <div
+                                class="size-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400">
+                                <span class="material-symbols-outlined">brush</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Step 2</p>
+                                <p class="font-bold text-slate-600 dark:text-slate-200">Cheekbone Blush</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-400">expand_more</span>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 p-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3 opacity-70">
+                            <div
+                                class="size-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Step 3</p>
+                                <p class="font-bold text-slate-600 dark:text-slate-200">Eyelid Shimmer</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-400">expand_more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Fixed Footer CTAs -->
+    <footer
+        class="fixed bottom-0 left-0 right-0 p-6 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 z-50">
+        <div class="flex gap-4 max-w-4xl mx-auto">
+            <button
+                class="flex-1 bg-primary text-white h-14 rounded-full font-bold flex items-center justify-center gap-2 shadow-xl shadow-primary/30 transition-transform active:scale-95">
+                <span class="material-symbols-outlined">camera</span>
                 Start AR Coaching
             </button>
-<button class="size-14 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 transition-transform active:scale-95">
-<span class="material-symbols-outlined">bookmark</span>
-</button>
-</div>
-</footer>
-</body></html>
+            <button
+                class="size-14 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 transition-transform active:scale-95">
+                <span class="material-symbols-outlined">bookmark</span>
+            </button>
+        </div>
+    </footer>
+</body>
+
+</html>
