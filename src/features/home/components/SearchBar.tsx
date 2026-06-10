@@ -20,7 +20,7 @@ export function SearchBar() {
 const styles = StyleSheet.create({
   wrap: {
     height: 48,
-    marginHorizontal: spacing.lg,
+    marginHorizontal: spacing.md,
     borderRadius: radius.pill,
     backgroundColor: colors.surface,
     borderWidth: 1,

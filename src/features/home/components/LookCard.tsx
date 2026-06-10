@@ -49,23 +49,24 @@ export function LookCard({ look }: LookCardProps) {
 const styles = StyleSheet.create({
   card: {
     marginHorizontal: spacing.lg,
-    marginBottom: spacing.xl,
+    marginBottom: 28,
     backgroundColor: colors.surface,
     borderRadius: radius.xl,
     overflow: "hidden",
     borderWidth: 1,
     borderColor: colors.faint,
     shadowColor: "#000",
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.1,
     shadowRadius: 18,
-    shadowOffset: { width: 0, height: 10 },
+    shadowOffset: { width: 0, height: 9 },
     elevation: 3
   },
   pressed: {
     transform: [{ scale: 0.99 }]
   },
   imageWrap: {
-    height: 330,
+    width: "100%",
+    aspectRatio: 4 / 5,
     backgroundColor: colors.surfaceMuted
   },
   image: {
@@ -75,19 +76,21 @@ const styles = StyleSheet.create({
   },
   badges: {
     position: "absolute",
-    top: spacing.lg,
-    left: spacing.lg,
+    top: 14,
+    left: 14,
     flexDirection: "row",
     gap: spacing.sm
   },
   body: {
-    padding: spacing.lg
+    paddingHorizontal: spacing.lg,
+    paddingTop: 13,
+    paddingBottom: spacing.md
   },
   creatorRow: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.sm,
-    marginBottom: spacing.sm
+    marginBottom: 10
   },
   creatorAvatar: {
     width: 26,
@@ -111,20 +114,20 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.ink,
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: "900",
-    marginBottom: spacing.sm
+    marginBottom: 6
   },
   summary: {
     color: colors.muted,
-    fontSize: 14,
-    lineHeight: 20
+    fontSize: 13,
+    lineHeight: 18
   },
   tags: {
     flexDirection: "row",
     gap: spacing.sm,
-    marginTop: spacing.md,
-    marginBottom: spacing.lg
+    marginTop: 8,
+    marginBottom: 13
   },
   tag: {
     color: colors.primary,
@@ -132,7 +135,7 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   cta: {
-    height: 48,
+    height: 44,
     borderRadius: radius.pill,
     backgroundColor: colors.primary,
     alignItems: "center",

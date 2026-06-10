@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   status: {
     alignSelf: "flex-end",
     marginRight: spacing.lg,
-    marginTop: spacing.lg,
+    marginTop: spacing.md,
     paddingHorizontal: spacing.md,
     paddingVertical: 8,
     borderRadius: 999,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: spacing.xl,
     right: spacing.xl,
-    bottom: 292,
+    bottom: "35%",
     borderRadius: 999,
     backgroundColor: colors.primary,
     paddingHorizontal: spacing.lg,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   controls: {
     position: "absolute",
     right: spacing.lg,
-    bottom: 330,
+    bottom: "38%",
     gap: spacing.sm
   },
   control: {

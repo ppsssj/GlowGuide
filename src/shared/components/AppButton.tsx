@@ -39,7 +39,7 @@ export function AppButton({ label, onPress, variant = "primary", icon, style }: 
 
 const styles = StyleSheet.create({
   base: {
-    minHeight: 52,
+    minHeight: 58,
     borderRadius: radius.pill,
     alignItems: "center",
     justifyContent: "center",
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: colors.surface,
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: "800"
   },
   darkLabel: {

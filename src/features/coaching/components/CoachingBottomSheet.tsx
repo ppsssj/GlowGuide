@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    padding: spacing.xl,
+    paddingHorizontal: spacing.xl,
+    paddingTop: 22,
     paddingBottom: 34,
     borderTopLeftRadius: radius.xl,
     borderTopRightRadius: radius.xl,
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     backgroundColor: "rgba(117,103,108,0.28)",
     alignSelf: "center",
-    marginBottom: spacing.xl
+    marginBottom: 22
   },
   top: {
     flexDirection: "row",
@@ -106,16 +107,16 @@ const styles = StyleSheet.create({
   instruction: {
     color: colors.text,
     fontSize: 15,
-    lineHeight: 22,
-    marginTop: spacing.xl,
-    marginBottom: spacing.xl
+    lineHeight: 23,
+    marginTop: 22,
+    marginBottom: 26
   },
   actions: {
     flexDirection: "row",
     gap: spacing.md
   },
   skip: {
-    minHeight: 52,
+    minHeight: 58,
     minWidth: 94,
     borderRadius: radius.pill,
     borderWidth: 1,

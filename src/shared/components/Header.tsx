@@ -12,21 +12,31 @@ type HeaderProps = {
 };
 
 export function Header({ title, subtitle, showBack, rightLabel }: HeaderProps) {
-  return (
-    <View style={styles.header}>
-      <View style={styles.side}>
-        {showBack ? (
-          <Pressable onPress={() => router.back()} style={styles.iconButton}>
-            <Ionicons name="chevron-back" size={22} color={colors.ink} />
-          </Pressable>
-        ) : (
+  if (!showBack) {
+    return (
+      <View style={styles.homeHeader}>
+        <View style={styles.brandRow}>
           <View style={styles.logo}>
             <Ionicons name="sparkles" size={16} color={colors.surface} />
           </View>
-        )}
+          <Text style={styles.homeTitle}>{title}</Text>
+        </View>
+        <View style={styles.iconButton}>
+          <Ionicons name="notifications-outline" size={20} color={colors.text} />
+        </View>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.header}>
+      <View style={styles.side}>
+        <Pressable onPress={() => router.back()} style={styles.backButton}>
+          <Ionicons name="chevron-back" size={25} color={colors.ink} />
+        </Pressable>
       </View>
       <View style={styles.titleWrap}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title, subtitle && styles.compactTitle]}>{title}</Text>
         {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
       </View>
       <View style={styles.side}>
@@ -43,6 +53,20 @@ export function Header({ title, subtitle, showBack, rightLabel }: HeaderProps) {
 }
 
 const styles = StyleSheet.create({
+  homeHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 12,
+    paddingTop: 18,
+    paddingBottom: 10,
+    backgroundColor: colors.background
+  },
+  brandRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8
+  },
   header: {
     flexDirection: "row",
     alignItems: "center",
@@ -61,7 +85,15 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.ink,
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight: "900"
+  },
+  compactTitle: {
+    fontSize: 20
+  },
+  homeTitle: {
+    color: colors.ink,
+    fontSize: 19,
     fontWeight: "900"
   },
   subtitle: {
@@ -84,6 +116,12 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: radius.pill,
     backgroundColor: colors.surface,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  backButton: {
+    width: 40,
+    height: 40,
     alignItems: "center",
     justifyContent: "center"
   },

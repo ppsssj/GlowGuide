@@ -29,8 +29,8 @@ export function CreatorStats({ creator }: CreatorStatsProps) {
 const styles = StyleSheet.create({
   row: {
     marginHorizontal: spacing.xl,
-    marginTop: spacing.xl,
-    paddingVertical: spacing.lg,
+    marginTop: 24,
+    paddingVertical: 17,
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderColor: colors.faint,
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   value: {
     color: colors.ink,
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: "900"
   },
   label: {

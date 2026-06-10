@@ -28,7 +28,7 @@ export function HowToApplyList({ steps }: HowToApplyListProps) {
               <Text style={styles.stepLabel}>Step {index + 1}</Text>
               <Text style={styles.stepTitle}>{step.title}</Text>
             </View>
-            <Text style={styles.chevron}>{index === 0 ? "⌃" : "⌄"}</Text>
+            <Ionicons name={index === 0 ? "chevron-up" : "chevron-down"} size={18} color={index === 0 ? colors.primary : colors.muted} />
           </View>
           {index === 0 ? <Text style={styles.instruction}>{step.instruction}</Text> : null}
         </Card>
@@ -39,17 +39,18 @@ export function HowToApplyList({ steps }: HowToApplyListProps) {
 
 const styles = StyleSheet.create({
   section: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xl,
+    paddingHorizontal: spacing.xl,
+    paddingTop: 38,
     gap: spacing.md
   },
   heading: {
     color: colors.ink,
-    fontSize: 21,
+    fontSize: 22,
     fontWeight: "900"
   },
   step: {
-    padding: spacing.lg
+    padding: 18,
+    borderRadius: radius.lg
   },
   featuredStep: {
     borderColor: colors.blush,
@@ -86,15 +87,10 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     marginTop: 2
   },
-  chevron: {
-    color: colors.primary,
-    fontSize: 20,
-    fontWeight: "900"
-  },
   instruction: {
     color: colors.muted,
     fontSize: 14,
-    lineHeight: 21,
+    lineHeight: 24,
     marginTop: spacing.lg,
     paddingTop: spacing.lg,
     borderTopWidth: 1,

@@ -27,16 +27,17 @@ export function CategoryTabs({ active, onChange }: CategoryTabsProps) {
 const styles = StyleSheet.create({
   row: {
     gap: spacing.sm,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md
+    paddingHorizontal: spacing.md,
+    paddingTop: 14,
+    paddingBottom: spacing.lg
   },
   chip: {
     borderRadius: radius.pill,
     backgroundColor: colors.surface,
     borderWidth: 1,
     borderColor: colors.faint,
-    paddingHorizontal: 18,
-    paddingVertical: 10
+    paddingHorizontal: 17,
+    paddingVertical: 9
   },
   activeChip: {
     backgroundColor: colors.primary,

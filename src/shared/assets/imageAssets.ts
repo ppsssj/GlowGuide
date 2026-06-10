@@ -1,7 +1,10 @@
 export const imageAssets = {
   completedAfter: require("./images/completed-after.png"),
   creatorFeaturedGoldenHour: require("./images/creator-featured-golden-hour.png"),
+  creatorGridMidnight: require("./images/creator-grid-midnight.png"),
   creatorGridPeach: require("./images/creator-grid-peach.png"),
+  creatorGridRosePetal: require("./images/creator-grid-rose-petal.png"),
+  creatorGridSunkissed: require("./images/creator-grid-sunkissed.png"),
   creatorMinaAvatar: require("./images/creator-mina-avatar.png"),
   lookCrimsonLip: require("./images/look-crimson-lip.png"),
   lookRadiantRose: require("./images/look-radiant-rose.png"),

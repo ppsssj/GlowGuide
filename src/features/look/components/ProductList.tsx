@@ -35,8 +35,8 @@ export function ProductList({ products }: ProductListProps) {
 
 const styles = StyleSheet.create({
   section: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xl,
+    paddingHorizontal: spacing.xl,
+    paddingTop: 34,
     gap: spacing.md
   },
   headingRow: {
@@ -46,24 +46,26 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: colors.ink,
-    fontSize: 21,
+    fontSize: 22,
     fontWeight: "900"
   },
   link: {
     color: colors.primary,
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: "900"
   },
   product: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    padding: spacing.md
+    gap: spacing.lg,
+    minHeight: 84,
+    padding: 14,
+    borderRadius: radius.lg
   },
   productIcon: {
-    width: 52,
-    height: 52,
-    borderRadius: radius.md,
+    width: 58,
+    height: 58,
+    borderRadius: radius.lg,
     backgroundColor: colors.blushSoft,
     alignItems: "center",
     justifyContent: "center"
@@ -79,13 +81,13 @@ const styles = StyleSheet.create({
   },
   productName: {
     color: colors.text,
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "900"
   },
   productMeta: {
     color: colors.muted,
-    fontSize: 12,
-    marginTop: 3
+    fontSize: 13,
+    marginTop: 4
   },
   bag: {
     width: 32,

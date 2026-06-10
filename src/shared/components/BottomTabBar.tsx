@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     minHeight: 76,
-    paddingTop: 8,
-    paddingBottom: 14,
+    paddingTop: 9,
+    paddingBottom: 13,
     paddingHorizontal: 14,
     backgroundColor: "rgba(255,255,255,0.96)",
     borderTopWidth: 1,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   createTab: {
-    marginTop: -18
+    marginTop: -17
   },
   iconWrap: {
     minWidth: 28,
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8
   },
   createIcon: {
-    width: 52,
-    height: 52,
+    width: 54,
+    height: 54,
     borderRadius: radius.pill,
     backgroundColor: colors.primary
   },

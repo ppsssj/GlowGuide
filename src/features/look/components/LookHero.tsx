@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
 import { colors } from "../../../shared/constants/colors";
 import { radius } from "../../../shared/constants/radius";
 import { spacing } from "../../../shared/constants/spacing";
@@ -14,20 +15,29 @@ export function LookHero({ look }: LookHeroProps) {
   return (
     <View style={styles.wrap}>
       <Image source={look.hero} style={styles.image} />
-      <View style={styles.scrim} />
+      <LinearGradient
+        colors={["rgba(0,0,0,0.38)", "rgba(248,246,246,0.08)", colors.background]}
+        locations={[0, 0.42, 1]}
+        style={styles.scrim}
+      />
       <View style={styles.topControls}>
         <Pressable onPress={() => router.back()} style={styles.circle}><Ionicons name="arrow-back" size={21} color={colors.surface} /></Pressable>
         <View style={styles.circle}><Ionicons name="share-social-outline" size={20} color={colors.surface} /></View>
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>{look.title}</Text>
-        <Pressable onPress={() => router.push(`/creator/${look.creatorId}`)} style={styles.creatorRow}>
-          <View style={styles.avatar}><Text style={styles.avatarText}>{look.creatorName[0]}</Text></View>
-          <View>
-            <Text style={styles.creator}>{look.creatorName}</Text>
-            <Text style={styles.creatorMeta}>Senior MUA • tap to view profile</Text>
+        <View style={styles.creatorBlock}>
+          <Pressable onPress={() => router.push(`/creator/${look.creatorId}`)} style={styles.creatorRow}>
+            <View style={styles.avatar}><Text style={styles.avatarText}>{look.creatorName[0]}</Text></View>
+            <View>
+              <Text style={styles.creator}>{look.creatorName}</Text>
+              <Text style={styles.creatorMeta}>Senior MUA • 1.2M followers</Text>
+            </View>
+          </Pressable>
+          <View style={styles.followButton}>
+            <Text style={styles.followText}>Follow</Text>
           </View>
-        </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -35,7 +45,7 @@ export function LookHero({ look }: LookHeroProps) {
 
 const styles = StyleSheet.create({
   wrap: {
-    height: 460,
+    height: 450,
     backgroundColor: colors.surfaceMuted
   },
   image: {
@@ -45,7 +55,11 @@ const styles = StyleSheet.create({
   },
   scrim: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(248,246,246,0.25)"
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0
   },
   topControls: {
     position: "absolute",
@@ -71,15 +85,22 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.ink,
-    fontSize: 38,
+    fontSize: 37,
     lineHeight: 42,
     fontWeight: "900",
-    marginBottom: spacing.lg
+    marginBottom: 22
+  },
+  creatorBlock: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.md
   },
   creatorRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md
+    gap: spacing.md,
+    flex: 1
   },
   avatar: {
     width: 48,
@@ -105,5 +126,23 @@ const styles = StyleSheet.create({
     color: colors.muted,
     fontSize: 12,
     fontWeight: "700"
+  },
+  followButton: {
+    height: 42,
+    minWidth: 86,
+    borderRadius: radius.pill,
+    backgroundColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: colors.primary,
+    shadowOpacity: 0.24,
+    shadowRadius: 13,
+    shadowOffset: { width: 0, height: 7 },
+    elevation: 3
+  },
+  followText: {
+    color: colors.surface,
+    fontSize: 14,
+    fontWeight: "900"
   }
 });

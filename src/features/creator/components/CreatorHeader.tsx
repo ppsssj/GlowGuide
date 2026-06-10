@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   wrap: {
     alignItems: "center",
     paddingHorizontal: spacing.xl,
-    paddingTop: spacing.xl
+    paddingTop: 22
   },
   avatarWrap: {
     position: "relative"
@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
   },
   name: {
     color: colors.ink,
-    fontSize: 30,
+    fontSize: 29,
     fontWeight: "900",
-    marginTop: spacing.md
+    marginTop: 13
   },
   meta: {
     color: colors.muted,
@@ -72,19 +72,20 @@ const styles = StyleSheet.create({
   bio: {
     color: colors.text,
     textAlign: "center",
-    fontSize: 15,
-    lineHeight: 22,
-    marginTop: spacing.lg,
+    fontSize: 16,
+    lineHeight: 25,
+    marginTop: 20,
     maxWidth: 330
   },
   actions: {
     flexDirection: "row",
-    gap: spacing.md,
-    marginTop: spacing.xl
+    gap: spacing.lg,
+    marginTop: 24
   },
   action: {
     flex: 1,
     minWidth: 142,
+    minHeight: 48,
     borderRadius: radius.md
   }
 });

@@ -31,14 +31,14 @@ export function CoachingProgress({ title, current, total }: CoachingProgressProp
 
 const styles = StyleSheet.create({
   wrap: {
-    paddingTop: 48,
+    paddingTop: 18,
     paddingHorizontal: spacing.lg,
     gap: spacing.md
   },
   header: {
-    height: 56,
+    height: 58,
     borderRadius: radius.pill,
-    backgroundColor: "rgba(255,255,255,0.72)",
+    backgroundColor: "rgba(255,255,255,0.68)",
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.5)",
     flexDirection: "row",
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     fontWeight: "900"
   },
   track: {
-    height: 6,
+    height: 5,
     borderRadius: radius.pill,
     backgroundColor: "rgba(255,255,255,0.34)",
     overflow: "hidden"

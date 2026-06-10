@@ -12,6 +12,13 @@ type CreatorLookGridProps = {
 };
 
 export function CreatorLookGrid({ looks }: CreatorLookGridProps) {
+  const portfolioTiles = [
+    { title: "Sunkissed Glow", image: imageAssets.creatorGridSunkissed, lookId: "sun-kissed-glow" },
+    { title: "Midnight Glam", image: imageAssets.creatorGridMidnight, lookId: "bold-crimson-evening" },
+    { title: "Peach Velvet", image: imageAssets.creatorGridPeach, lookId: "peach-velvet" },
+    { title: "Rose Petal", image: imageAssets.creatorGridRosePetal, lookId: "radiant-rose" }
+  ];
+
   return (
     <View style={styles.section}>
       <View style={styles.tabs}>
@@ -32,11 +39,11 @@ export function CreatorLookGrid({ looks }: CreatorLookGridProps) {
         </View>
       </Pressable>
       <View style={styles.grid}>
-        {looks.map((look) => (
-          <Pressable key={look.id} onPress={() => router.push(`/look/${look.id}`)} style={styles.tile}>
-            <Image source={look.hero} style={styles.tileImage} />
+        {portfolioTiles.map((tile) => (
+          <Pressable key={tile.title} onPress={() => router.push(`/look/${tile.lookId}`)} style={styles.tile}>
+            <Image source={tile.image} style={styles.tileImage} />
             <View style={styles.tileIcon}><Ionicons name="scan" size={16} color={colors.primary} /></View>
-            <Text style={styles.tileTitle}>{look.title}</Text>
+            <Text style={styles.tileTitle}>{tile.title}</Text>
           </Pressable>
         ))}
       </View>
@@ -46,7 +53,7 @@ export function CreatorLookGrid({ looks }: CreatorLookGridProps) {
 
 const styles = StyleSheet.create({
   section: {
-    marginTop: spacing.xxl,
+    marginTop: 30,
     paddingBottom: 110
   },
   tabs: {
@@ -59,8 +66,8 @@ const styles = StyleSheet.create({
     color: colors.primary,
     fontSize: 15,
     fontWeight: "900",
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.xl,
+    paddingVertical: 15,
     borderBottomWidth: 2,
     borderColor: colors.primary
   },
@@ -68,12 +75,14 @@ const styles = StyleSheet.create({
     color: colors.muted,
     fontSize: 15,
     fontWeight: "800",
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.lg
+    paddingHorizontal: spacing.xl,
+    paddingVertical: 15
   },
   featured: {
-    height: 250,
-    margin: spacing.xl,
+    height: 254,
+    marginHorizontal: spacing.xl,
+    marginTop: spacing.xl,
+    marginBottom: spacing.lg,
     borderRadius: radius.xl,
     overflow: "hidden",
     backgroundColor: colors.surfaceMuted
@@ -129,11 +138,13 @@ const styles = StyleSheet.create({
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: spacing.lg,
+    columnGap: spacing.lg,
+    rowGap: 18,
     paddingHorizontal: spacing.xl
   },
   tile: {
-    width: "47%"
+    width: "47%",
+    position: "relative"
   },
   tileImage: {
     width: "100%",
